@@ -28,14 +28,14 @@ by  [ay27](https://github.com/ay27)
 
 <h2 id=1>整体框架</h2>
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/Blank Flowchart - New Page.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/Blank%20Flowchart%20-%20New%20Page.png)
 
 
 <h2 id=2>module类</h2>
 * module的结构
 * 各module类描述
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午4.10.18.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午4.10.18.png)
 
 
 ### module的结构
@@ -84,7 +84,7 @@ by  [ay27](https://github.com/ay27)
 ### 使用数据库的原因
 一开始想着用数据库来进行一些数据的缓存，后来发现，缓存的必要性不大，随后改造成适于列表ListView的展示，因为系统为我们提供了一个`CursorAdapter`，我们把数据从服务器中查询过来，然后插入数据库中，随后由系统自动通知CursorAdapter来进行页面更新。但是由于CursorAdapter的定制性实在差强人意，在某些界面还是使用了传统的BaseAdapter。之后会看到这些界面的。
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午4.59.30.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午4.59.30.png)
 
 这是数据库支持的主要部件。在view/templete/CursorSupport里有列表界面相关的设置，这里一并讲述。
 
@@ -97,7 +97,7 @@ by  [ay27](https://github.com/ay27)
 
 ####AndroidManifest中ContentProvider的定义
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午5.10.15.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午5.10.15.png)
 
 
 #### PickerContentProvider的设计
@@ -106,7 +106,7 @@ by  [ay27](https://github.com/ay27)
 * `ContentProvider`用来提供数据给Application，然后在Application中使用`ContentResolver`来连接`ContentProvider`，实现了两者的解耦
 * 为了能够根据Uri来判断是哪个数据表，实现了一个`UriMatcher`
 * 为了与数据库关联，需要一个`SQLiteOpenHelper`，在Picker中是`InnerHelper`，InnerHelper只需要实现数据库的建立和更新即可
-* 为了实现数据库的数据更新能够通知到界面并使界面做出相应改变，需要构建一整条通知链，具体可以参考我的博客：<http://www.ay27.pw/blog/2014/08/26/a-simple-demo/>
+* 为了实现数据库的数据更新能够通知到界面并使界面做出相应改变，需要构建一整条通知链，具体可以参考我的博客：<https://www.ay27.com/2014/08/26/2014-08-26-a-simple-demo/>
 * Picker数据库的最基本定义在`DataBase`类中
 * `DataTable类`包含了需要用到的所有数据表，InnerHelper会根据这里的数据表定义而建立数据库
 * 每个数据表只保存以下数据： 1.id  2.服务器返回的json数据  3.页码page  4.时间time； 可以在DataTable中的`sql_createTable`看到这些定义
@@ -125,7 +125,7 @@ by  [ay27](https://github.com/ay27)
 * 各支持类的描述
 
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.06.47.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午6.06.47.png)
 
 ### 连接的方法
 使用了volley库来简化开发。 与服务器的交互主要是两种方法：post和get方法。
@@ -143,11 +143,11 @@ by  [ay27](https://github.com/ay27)
 * 简述
 * 上传和下载模块的结构
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.47.31.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午6.47.31.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.48.34.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午6.48.34.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.51.26.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午6.51.26.png)
 
 ### 简述
 （由于某些原因，上传和下载分布在三个地方。而且这个模块的实现非常糟糕，结构有点混乱，希望后来者对此有所改善）
@@ -174,7 +174,7 @@ by  [ay27](https://github.com/ay27)
 * 注意我们的上传模块是使用了iso-8859-1编码，不是utf-8，具体原因是服务器，貌似是tomcat默认是iso-8859-1
 
 ### view/writer/upload
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.53.14.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.53.14.png)
 
 先说明几个类完成的工作：
 
@@ -211,7 +211,7 @@ by  [ay27](https://github.com/ay27)
 * 各模块描述
 
 ### 模块整体描述
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午7.10.22.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午7.10.22.png)
 
 界面支持的代码量非常大，使用了很多额外的库来实现比较好的界面。在Picker的众多Module（这里的Module是相对于Project来说的）中，只有cropper不是用于实现界面的。
 下面简述各模块的细节。
@@ -243,19 +243,19 @@ by  [ay27](https://github.com/ay27)
 #### EditTextValidator
 用于提供以下界面，详细用法见源码：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.41.37.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.41.37.png)
 
 #### PickerWidget
 这里包含了一些简单的控件，以及某些我个人设计的控件。
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午7.39.43.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午7.39.43.png)
 
 下面只是简单的描述各个控件的用途，更具体的看源码。
 
 1. markdown_support：如名，提供了一个MarkdownView，用于把markdown文本展示才胡来
 2. preference_support：因为andorid系统不存在`PreferenceFragment`，所以只能自造一个，用于`设置`界面
 3. AdjustableListView：为了解决在`ScrollView`中ListView的高度计算问题（这应该算是android系统的bug）
-4. BookPageIndicator：用于实现这个控件：![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.45.38.png)
+4. BookPageIndicator：用于实现这个控件：![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.45.38.png)
 5. CardsAnimationAdapter：用于列表的弹出动画
 6. FitSystemWindowFrameLayout：为了解决使用了沉浸式界面后，底部的输入栏不能随软键盘的弹出而自动跟随。可见：<https://code.google.com/p/android/issues/detail?id=63777>，以及<http://stackoverflow.com/questions/21092888/windowsoftinputmode-adjustresize-not-working-with-translucent-action-navbar>
 7. FloatingButton：这玩意是可以跟随ListView的滚动而弹出或收回滴：![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/picker3.png)
@@ -265,12 +265,12 @@ by  [ay27](https://github.com/ay27)
 
 #### pinned_section_listview
 用于实现在问题列表按章节排序后，列表的可固定效果
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午9.11.11.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午9.11.11.png)
 
 #### supertoasts
 有几种风格，慢慢体会：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午9.13.50.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午9.13.50.png)
 
 #### 额外的模块
 一个是位于`Picker/swipe_back`，用于实现右滑返回。放在Picker里边是因为需要用到`PickerApplication`中的一些数据。**注意**：
@@ -329,7 +329,7 @@ CookieHandler.setDefault(cookieManager);
 
 
 <h2 id=9>书本管理</h2>
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.42.15.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.42.15.png)
 
 在这个部分，讲述`MainActivity类`及该界面下侧边栏的一些情况，但是侧边栏上的用户信息一栏在[用户信息](#13)部分讲述，因为那一部分比较大，所以分割开。
 
@@ -354,10 +354,10 @@ CookieHandler.setDefault(cookieManager);
 
 为什么要这么做呢？这是由之前描述过的一个系统bug引起的。看下面两个界面，可以看到输入框是跟随软键盘的弹出收回而改变位置的。
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.43.50.png)
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.43.57.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.43.50.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.43.57.png)
 
-如果不使用MaterialDesign和沉浸式状态栏，那么可以直接使用我博客里写的做法：<http://www.ay27.pw/blog/2014/09/10/a_simple_problem_in_android/>
+如果不使用MaterialDesign和沉浸式状态栏，那么可以直接使用我博客里写的做法：<https://www.ay27.com/2014/09/10/2014-09-10-a_simple_problem_in_android/>
 
 但是使用后发现无论如何都没法做到这个效果。后来查询后发现是系统的一个bug，这个bug已经在前面给出过链接了（这个bug不知道是否会在android5.0中出现，没有做相应的测试）。
 
@@ -379,7 +379,7 @@ CookieHandler.setDefault(cookieManager);
 #### 搜索
 这里的搜索和后边[页码扫描和搜索](#14)不是一个东西。后边的主要是使用页码进行搜索，这里是直接文本模糊搜索。可以看到可搜索的内容有这些：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.44.14.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.44.14.png)
 
 但是由于使用了MaterialDesign后，这个Spinner的下拉图标变白色了，导致一开始看不出来是一个下拉菜单，但是应该是可以改进的。
 
@@ -401,18 +401,18 @@ CookieHandler.setDefault(cookieManager);
 * 摄像头的`PreviewSize`一定要设置正确，使之与屏幕分辨率一致或宽高比例一样，否则会产生拉伸变形
 * `onPreviewFrame`中，可以看到每隔5帧图像才使用一帧，这是因为获取到图像后需要做两件事：1. 旋转图像； 2. 识别条码。这两个处理都是需要消耗大量资源的，唯有尽可能减少数据量才能完成
 * 使用了一个线程池来完成没一帧需要处理的图像的旋转。旋转是因为：无论我们怎么设置摄像头，都别妄想能在`onPreviewFrame`中拿到竖屏方向的图像。当然设置摄像头的方向可以使得`拍照`时获取到正确方向的图像，但是实时获取摄像头数据时是不可能做到的，只能自己做一次旋转
-* 关于旋转，可以参考我的一篇博文：<http://www.ay27.pw/blog/2014/10/09/a-simple-image-rotate-function/>
+* 关于旋转，可以参考我的一篇博文：<https://www.ay27.com/2014/10/09/2014-10-09-a-simple-image-rotate-function/>
 * 这里没有真正的做分辨率的适配，因为手头上没有更多的设备来测试，而虚拟机的摄像头是没法用的，即使能开启，由于无法对焦，图像也是几乎无法识别的。希望后来的人可以做好这点
 
 
 <h2 id=11>用户信息</h2>
 讲述这个界面以及这里点击后转跳过去的界面：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.42.25.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.42.25.png)
 
 这是对应的一些子界面：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-18 上午9.45.10.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-18%20上午9.45.10.png)
 
 这些子界面都是直接使用了`ListSupportActivity`，可以看到代码量非常少
 
@@ -426,7 +426,7 @@ CookieHandler.setDefault(cookieManager);
 * template模板方法
 
 ### FeedActivity中的一些细节
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.44.39.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.44.39.png)
 
 讲述两个要点：一个是顶部的Tab栏，一个是浮动按钮。
 
@@ -438,7 +438,7 @@ CookieHandler.setDefault(cookieManager);
 * 弹出窗是一个`PopupMenu`
 * 至于那个问题Tab上的角标，是直接使用了一个背景图片来完成的，使得用户感觉到这里有一个下拉菜单
 * 界面滑动时，Tab栏底下有一个白色条跟随，是`FragmentIndicator类`的工作
-* 更多的细节可以看这里：<http://www.ay27.pw/blog/2014/12/19/android-action-bar-tab/>
+* 更多的细节可以看这里：<https://www.ay27.com/2014/12/19/2014-12-19-android-action-bar-tab/>
 
 #### 浮动按钮
 浮动按钮可以做到Fragment中，也可以做到Activity。这里选择做到Activity是因为三个fragment都需要用到。
@@ -452,7 +452,7 @@ CookieHandler.setDefault(cookieManager);
 
 （说明一点：按时间排序，其实是按问题的id排序，但是这个id是按时间线增长的，所以间接的变成了按时间排序。但是貌似由于CursorAdapter的排序问题，感觉顺序有点不靠谱，之后最好把CursorAdapter取缔）
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.44.49.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午3.44.49.png)
 
 我们直接讲述实现比较麻烦的按章节排序。下面是目录选择器的几个要点：
 
@@ -463,7 +463,7 @@ CookieHandler.setDefault(cookieManager);
 
 至于按章节排序后，需要一个pinned listview来进行指示目前的位置。也就是下面的界面：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午9.11.11.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-17%20下午9.11.11.png)
 
 具体实现在`QuestionAdapterWithPinnedSection`中，这里讲述几个要点：
 
@@ -474,7 +474,7 @@ CookieHandler.setDefault(cookieManager);
 ### template模板方法
 主要讲述这个目录下的实现：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午12.24.13.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午12.24.13.png)
 
 模板方法：简单地说，就是父类中定好一个实现的流程，并实现了多个实现中的共同部分，关键步骤由子类实现
 
@@ -562,7 +562,7 @@ private DataTable table;
 * 上传完后，由服务器完成md文件的修改，因为需要由服务器生成对应的图片路径，然后嵌入到md文本中
 
 <h2 id=19>裁剪和纠偏</h2>
-`CropActivity`只是裁剪，`CutImageActivity`是裁剪+纠偏。CropActivity是使用了Crop库，CutImageAvtivity的具体实现见我的博客：<http://www.ay27.pw/blog/2014/08/04/imitation-scan-almighty-king-cropping-interface-implementation/>
+`CropActivity`只是裁剪，`CutImageActivity`是裁剪+纠偏。CropActivity是使用了Crop库，CutImageAvtivity的具体实现见我的博客：<https://www.ay27.com/2014/08/04/2014-08-04-imitation-scan-almighty-king-cropping-interface-implementation/>
 
 <h2 id=20>总结</h2>
 基本上差不多。
@@ -581,30 +581,30 @@ picker使用了根目录下的picker.jks进行签名，密码是：bitman
 
 因为使用了butterknife库进行一些界面的注入，所以需要设置java的注入器。注入选项可以选择自动识别，如果发现编译成功，但是运行app后直接抛错，就把它改成是指定的butterknife库。
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.10.52.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.10.52.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.12.46.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.12.46.png)
 
 
 每个模块的配置图：
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.14.53.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.14.53.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.04.29.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.04.29.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.04.39.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.04.39.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.04.45.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.04.45.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.04.50.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.04.50.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.04.55.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.04.55.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.05.04.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.05.04.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.05.10.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.05.10.png)
 
-![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.05.16.png)
+![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照%202015-01-19%20下午5.05.16.png)
 
 
 附带所有引用的项目的链接：
