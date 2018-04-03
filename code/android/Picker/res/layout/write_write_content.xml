@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/default_background">
+
+    <org.bitman.ay27.PickerWidget.BookPageIndicator android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/write_content_indicator"
+            android:layout_alignParentTop="true"/>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:id="@+id/bottom_frame"
+                 >
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bottom_layout"
+                android:background="#00000000"
+                >
+            <org.bitman.ay27.view.writer.editor_button.LinkButton
+                    android:text="链接"
+                    android:id="@+id/write_content_link_button"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.ImgButton
+                    android:text="图片"
+                    android:id="@+id/write_content_pic_button"
+                    style="@style/write_content_button_style"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bottom_layout_md"
+                android:background="#00000000"
+                >
+            <org.bitman.ay27.view.writer.editor_button.RectBracketButton
+                    android:text="[]"
+                    android:id="@+id/write_content_button1"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.BracketButton
+                    android:text="()"
+                    android:id="@+id/write_content_button2"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.StarButton
+                    android:text="*"
+                    android:id="@+id/write_content_button3"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.SharpButton
+                    android:text="#"
+                    android:id="@+id/write_content_button4"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.ColonButton
+                    android:text="“ ”"
+                    android:id="@+id/write_content_button5"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.HttpButton
+                    android:text="http://"
+                    android:id="@+id/write_content_button6"
+                    style="@style/write_content_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.TabButton
+                    android:text="Tab"
+                    android:id="@+id/write_content_button7"
+                    style="@style/write_content_button_style"
+                    />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_below="@id/write_content_indicator"
+                android:layout_above="@id/bottom_frame"
+                android:id="@+id/write_scrollView"
+            >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                >
+            <EditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/write_content_header"
+                      android:padding="12dp"
+                      android:textSize="20sp"
+                      android:paddingTop="16dp"
+                      android:paddingBottom="16dp"
+                      android:hint="标题"
+                      android:background="@null"/>
+
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:padding="12dp"
+                      android:textSize="20sp"
+                      android:paddingTop="16dp"
+                      android:paddingBottom="16dp"
+                      android:id="@+id/write_content_answer_question_title"
+                      android:hint="答案的问题"
+                      android:background="@null"/>
+
+            <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="match_parent"
+                                                       android:layout_height="1dp"/>
+
+            <EditText
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/write_content_content"
+                    android:isScrollContainer="true"
+                    android:linksClickable="true"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:hint="内容（可选）"
+                    android:gravity="left|top"
+                    android:minLines="15"
+                    android:background="@null"
+                    />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

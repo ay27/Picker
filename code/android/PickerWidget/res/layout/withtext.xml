@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:orientation="horizontal" android:gravity="center_vertical"
+        >
+    <include layout="@layout/without_text"
+             android:layout_width="20dp"
+             android:layout_height="1dp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textSize="12sp"
+              android:minWidth="56dp"
+              android:textColor="@color/separator_default_text_color"
+              android:text="回答"
+              android:lines="1"
+              android:gravity="center"
+            android:id="@+id/_separator_text"/>
+    <include layout="@layout/without_text" />
+</LinearLayout>

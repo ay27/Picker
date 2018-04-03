@@ -1,0 +1,122 @@
+<resources>
+
+    <!-- Application theme. -->
+    <!--<style name="AppTheme" parent="android:Theme.Holo.Light">-->
+        <!--<item name="android:actionBarStyle">@style/ActionbarStyle</item>-->
+        <!--<item name="android:actionOverflowButtonStyle">@style/ActionbarOverFlowStyle</item>-->
+        <!--&lt;!&ndash;<item name="android:windowIsTranslucent">false</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:windowBackground">@android:color/transparent</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:windowIsTranslucent">true</item>&ndash;&gt;-->
+    <!--</style>-->
+
+    <!--<style name="ActionbarStyle" parent="android:Widget.Holo.ActionBar">-->
+        <!--&lt;!&ndash;<item name="android:background">@color/main_bg</item>&ndash;&gt;-->
+        <!--<item name="android:titleTextStyle">@style/ActionbarTitleTextStyle</item>-->
+    <!--</style>-->
+
+    <!--<style name="ActionbarTitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">-->
+        <!--&lt;!&ndash;<item name="android:textColor">@android:color/white</item>&ndash;&gt;-->
+    <!--</style>-->
+
+    <!--<style name="ActionbarOverFlowStyle" parent="@android:style/Widget.Holo.ActionButton.Overflow">-->
+    <!--</style>-->
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+
+    <!--<style name="TranslucentTheme" parent="@style/AppTheme">-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="PickerTheme" parent="android:Theme.Holo.Light">-->
+        <!--&lt;!&ndash;-->
+            <!--Theme customizations available in newer API levels can go in-->
+            <!--res/values-vXX/styles.xml, while customizations related to-->
+            <!--backward-compatibility can go here.-->
+        <!--&ndash;&gt;-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:activatedBackgroundIndicator">@drawable/list_item_bg</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="Theme.Picker_style" parent="@android:style/Theme.Holo.Light">-->
+        <!--<item name="android:actionBarItemBackground">@drawable/selectable_background_picker_style</item>-->
+        <!--<item name="android:popupMenuStyle">@style/PopupMenu.Picker_style</item>-->
+        <!--<item name="android:dropDownListViewStyle">@style/DropDownListView.Picker_style</item>-->
+        <!--<item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Picker_style</item>-->
+        <!--<item name="android:actionDropDownStyle">@style/DropDownNav.Picker_style</item>-->
+        <!--<item name="android:actionBarStyle">@style/ActionBar.Solid.Picker_style</item>-->
+        <!--<item name="android:actionModeBackground">@drawable/cab_background_top_picker_style</item>-->
+        <!--<item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_picker_style</item>-->
+        <!--<item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Picker_style</item>-->
+
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+
+
+    <!--</style>-->
+
+    <!--<style name="ActionBar.Solid.Picker_style" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">-->
+        <!--<item name="android:background">@drawable/ab_solid_picker_style</item>-->
+        <!--<item name="android:backgroundStacked">@drawable/ab_stacked_solid_picker_style</item>-->
+        <!--<item name="android:backgroundSplit">@drawable/ab_bottom_solid_picker_style</item>-->
+        <!--<item name="android:progressBarStyle">@style/ProgressBar.Picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="ActionBar.Transparent.Picker_style" parent="@android:style/Widget.Holo.Light.ActionBar">-->
+        <!--<item name="android:background">@drawable/ab_transparent_picker_style</item>-->
+        <!--<item name="android:progressBarStyle">@style/ProgressBar.Picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="PopupMenu.Picker_style" parent="@android:style/Widget.Holo.Light.ListPopupWindow">-->
+        <!--<item name="android:popupBackground">@drawable/menu_dropdown_panel_picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="DropDownListView.Picker_style" parent="@android:style/Widget.Holo.Light.ListView.DropDown">-->
+        <!--<item name="android:listSelector">@drawable/selectable_background_picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="ActionBarTabStyle.Picker_style" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">-->
+        <!--<item name="android:background">@drawable/tab_indicator_ab_picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="DropDownNav.Picker_style" parent="@android:style/Widget.Holo.Light.Spinner">-->
+        <!--<item name="android:background">@drawable/spinner_background_ab_picker_style</item>-->
+        <!--<item name="android:popupBackground">@drawable/menu_dropdown_panel_picker_style</item>-->
+        <!--<item name="android:dropDownSelector">@drawable/selectable_background_picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="ProgressBar.Picker_style" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">-->
+        <!--<item name="android:progressDrawable">@drawable/progress_horizontal_picker_style</item>-->
+    <!--</style>-->
+
+    <!--<style name="ActionButton.CloseMode.Picker_style" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">-->
+        <!--<item name="android:background">@drawable/btn_cab_done_picker_style</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash; this style is only referenced in a Light.DarkActionBar based theme &ndash;&gt;-->
+    <!--<style name="Theme.Picker_style.Widget" parent="@android:style/Theme.Holo">-->
+        <!--<item name="android:popupMenuStyle">@style/PopupMenu.Picker_style</item>-->
+        <!--<item name="android:dropDownListViewStyle">@style/DropDownListView.Picker_style</item>-->
+    <!--</style>-->
+
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+</resources>

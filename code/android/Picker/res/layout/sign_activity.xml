@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/primary"
+            android:text="picker"
+            android:textStyle="italic"
+            android:textSize="64sp"
+            android:gravity="center"
+            android:textColor="@color/primary_light"
+            />
+
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="48dp"
+            >
+
+        <RadioGroup android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:id="@+id/sign_radio_group"
+                >
+            <RadioButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+                         android:layout_weight="1"
+                         android:button="@null"
+                         android:text="登录"
+                         android:gravity="center"
+                         android:background="@drawable/radio_group_bg"
+                         android:textColor="@drawable/radio_group_textcolor"
+                         android:id="@+id/sign_radio_1"/>
+            <RadioButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+                         android:layout_weight="1"
+                         android:button="@null"
+                         android:text="注册"
+                         android:gravity="center"
+                         android:background="@drawable/radio_group_bg"
+                         android:textColor="@drawable/radio_group_textcolor"
+                         android:id="@+id/sign_radio_2"/>
+        </RadioGroup>
+
+        <org.bitman.ay27.view.feed.FragmentIndicator android:layout_width="fill_parent" android:layout_height="3dp"
+                                                          android:id="@+id/sign_view_indicator"
+                                                          android:layout_gravity="bottom"/>
+    </FrameLayout>
+
+
+    <android.support.v4.view.ViewPager
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/sign_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="org.bitman.ay27.view.sign_in_up.SignActivity"
+            />
+
+</LinearLayout>

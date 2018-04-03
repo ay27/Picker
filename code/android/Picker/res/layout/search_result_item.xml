@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:minHeight="72dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/list_item_selector">
+    <ImageView android:layout_width="35dp" android:layout_height="35dp"
+            android:src="@drawable/user_icon"
+            android:layout_margin="12dp"
+            android:id="@+id/search_result_item_image"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
+            android:gravity="center_vertical"
+            >
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="这是搜索的结果，这是一个问题"
+                android:textColor="@color/text_darker_gray_default_selector"
+                android:id="@+id/search_result_item_text_large"
+                />
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/text_gray_default_selector"
+                android:text="13人关注，260赞"
+                android:id="@+id/search_result_item_text_small"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:gravity="right"
+                  android:layout_gravity="top"
+                  android:textSize="12sp"
+                  android:text="问题"
+                  android:textColor="@color/text_gray_default_selector"
+                  android:id="@+id/search_result_item_type"
+                  android:layout_marginRight="12dp"
+                />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $('.book').hover(
+        function(){
+            $(this).removeClass('blank');
+            $(this).addClass('shadow');
+        },
+        function(){
+            $(this).removeClass('shadow');
+            $(this).addClass('blank');
+        }
+    );
+});

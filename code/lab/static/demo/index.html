@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="bootstrap/css/bootstrap.css">
+    <!--<link type="text/css" rel="stylesheet" charset="UTF-8" href="semantic/css/semantic.css">-->
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/base.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/index.css">
+
+    <!--<script src="js/autoreload.js"></script>-->
+    <script src="js/jquery.js"></script>
+    <!--<script src="semantic/javascript/semantic.js"></script>-->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<!--TODO: AJAX取消息-->
+<body>
+    <div id="nav" class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div id="logo" class="row">
+                <div class="col-md-6">
+                    <img src="images/logo.png">
+                </div>
+                <div class="col-md-16">
+                    <a href="#"><h1>Picker</h1></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 6px !important;">
+            <div class="ui mini icon input" style="width: 85%">
+                <input type="text" placeholder="查询...">
+                <i class="search icon" style="color: #5082AA"></i>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="#"><h2>发现</h2></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#"><h2>前往</h2></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#"><h2>消息</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="dropdown">
+                <div>
+                    <a href="#"><img src="images/avatar_01.png" style="border-radius: 5px;"></a>
+                    <a href="#"><h3>韩寒</h3></a>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="nav_item" href="#" data-value="home">我的主页</a></li>
+                    <li><a class="nav_item" href="#" data-value="message">私信</a></li>
+                    <li><a class="nav_item" href="#" data-value="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div id="content">
+        <div id="label">
+            <div>我的阅读 @ 韩寒</div>
+            <hr />
+        </div>
+
+        <div id="books_list">
+            <!--第一列-->
+            <div class="books_row">
+                <div class="row">
+                    <!--第一本书-->
+                    <div class="col-md-8 book blank">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#"><img src="images/books/0.jpg"></a>
+                            </div>
+                            <div class="col-md-12">        <!--信息栏-->
+                                <div class="info"><a href="#"><span class="book_title">追风筝的人</span></a></div>
+                                <div class="info"><span class="book_author">[美] 卡勒德·胡赛尼</span></div>
+                                <div class="info"><span class="book_read">13.7k 人阅读</span></div>
+                                <div class="info">
+                                    <span class="book_num">笔记：<span class="personal">22</span><span class="total">/11.2k</span></span>
+                                </div>
+                                <div class="info">
+                                    <span class="book_num">问答：<span class="personal">5</span><span class="total">/133</span></span>
+                                </div>
+                                <div style="float: right; color: #BBBBBB">2012-3-24</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--TODO: 根据第一本书重构此部分 -->
+                    <!--第二本-->
+                    <div class="col-md-8 book blank">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="images/books/1.jpg">
+                            </div>
+                            <div class="col-md-12">        <!--信息栏-->
+                                <div class="info book_title">不能承受的生命之轻</div>
+                                <div class="info book_author">[捷克] 米兰·昆德拉</div>
+                                <div class="info book_read">2.4k 人阅读</div>
+                                <div class="info book_num">
+                                    笔记：<span class="personal">3</span><span class="total">/1.3k</span>
+                                </div>
+                                <div class="info book_num">
+                                    问答：<span class="personal">13</span><span class="total">/3.6k</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第三本-->
+                    <div class="col-md-8 book blank">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="images/books/2.jpg">
+                            </div>
+                            <div class="col-md-12">        <!--信息栏-->
+                                <div class="info book_title">挪威的森林</div>
+                                <div class="info book_author">[日] 村上春树</div>
+                                <div class="info book_read">211.3k 人阅读</div>
+                                <div class="info book_num">
+                                    笔记：<span class="personal">106</span><span class="total">/227k</span>
+                                </div>
+                                <div class="info book_num">
+                                    问答：<span class="personal">62</span><span class="total">/771</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--第二列-->
+            <div class="books_row">
+                <div class="row">
+                    <!--第一本书-->
+                    <div class="col-md-8 book blank">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="images/books/3.jpg">
+                            </div>
+                            <div class="col-md-12">        <!--信息栏-->
+                                <div class="info book_title">追风筝的人</div>
+                                <div class="info book_author">[美] 卡勒德·胡赛尼</div>
+                                <div class="info book_read">13.7k 人阅读</div>
+                                <div class="info book_num">
+                                    笔记：<span class="personal">22</span><span class="total">/11.2k</span>
+                                </div>
+                                <div class="info book_num">
+                                    问答：<span class="personal">5</span><span class="total">/133</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二本-->
+                    <div class="col-md-8 book blank">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img src="images/books/4.jpg">
+                            </div>
+                            <div class="col-md-12">        <!--信息栏-->
+                                <div class="info book_title">追风筝的人</div>
+                                <div class="info book_author">[美] 卡勒德·胡赛尼</div>
+                                <div class="info book_read">13.7k 人阅读</div>
+                                <div class="info book_num">
+                                    笔记：<span class="personal">22</span><span class="total">/11.2k</span>
+                                </div>
+                                <div class="info book_num">
+                                    问答：<span class="personal">5</span><span class="total">/133</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

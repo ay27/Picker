@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/base.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/user.css">
+
+    <!--<script src="js/autoreload.js"></script>-->
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/user.js"></script>
+</head>
+<body>
+    <div id="nav" class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <div id="logo" class="row">
+                <div class="col-md-6">
+                    <img src="images/logo.png">
+                </div>
+                <div class="col-md-16">
+                    <a href="#"><h1>Picker</h1></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin-top: 6px !important;">
+            <div class="ui mini icon input" style="width: 85%">
+                <input type="text" placeholder="查询...">
+                <i class="search icon" style="color: #5082AA"></i>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <a href="#"><h2>发现</h2></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#"><h2>前往</h2></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#"><h2>消息</h2></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="dropdown">
+                <div>
+                    <a href="#"><img src="images/avatar_01.png" style="border-radius: 5px;"></a>
+                    <a href="#"><h3>韩寒</h3></a>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a class="nav_item" href="#" data-value="home">我的主页</a></li>
+                    <li><a class="nav_item" href="#" data-value="message">私信</a></li>
+                    <li><a class="nav_item" href="#" data-value="logout">登出</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div class="row" style="margin-top: 15px; width: 100%">
+        <div class="col-md-3"></div>
+        <div class="col-md-18">
+            <div class="col-md-6">
+                <div id="user_photo"><img src="images/avatar_02.png"></div>
+                <div id="action">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="split"><i class="glyphicon glyphicon-envelope"></i>发私信</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="follow_action"><i class="glyphicon glyphicon-plus" style="color: #00B5AD"></i>加关注</div>
+                            <div class="cancel_follow" style="display: none"><i class="glyphicon glyphicon-ok"></i>取消关注</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="labels">
+                    <div class="info">
+                        <span>加入 5 个圈子</span>
+                        <span class="show_all" data-tab="search_label"><i class="glyphicon glyphicon-search"></i></span>
+                    </div>
+                    <span class="label">一个</span>
+                    <span class="label">电子科技大学</span>
+                    <span class="label">实验班</span>
+                    <span class="label">作家协会</span>
+                    <span class="label">x年x班</span>
+                </div>
+                <div class="follow">
+                    <div class="info">
+                        <span>关注 108 人</span>
+                        <span class="show_all" data-tab="follow"><i class="glyphicon glyphicon-th"></i></span>
+                    </div>
+                    <div style="height: 35px; overflow: hidden">
+                        <span><img src="images/photo/0.jpg"/></span>
+                        <span><img src="images/photo/1.jpg"/></span>
+                        <span><img src="images/photo/2.jpg"/></span>
+                        <span><img src="images/photo/3.jpg"/></span>
+                        <span><img src="images/photo/4.jpg"/></span>
+                        <span><img src="images/photo/5.jpg"/></span>
+                    </div>
+                </div>
+                <div class="follow">
+                    <div class="info">
+                        <span>被 12.3k 人关注</span>
+                        <span class="show_all" data-tab="followed"><i class="glyphicon glyphicon-th"></i></span>
+                        <!--<span class="show_all"><a href="#">All»</a></span>-->
+                    </div>
+                    <div style="height: 35px; overflow:hidden;">
+                        <span><img src="images/photo/9.jpg"/></span>
+                        <span><img src="images/photo/8.jpg"/></span>
+                        <span><img src="images/photo/7.jpg"/></span>
+                        <span><img src="images/photo/6.jpg"/></span>
+                        <span><img src="images/photo/5.jpg"/></span>
+                        <span><img src="images/photo/4.jpg"/></span>
+                    </div>
+                </div>
+                <div id="count" class="row">
+                    <div class="col-md-8 box split">
+                        <div class="count_num">12</div>
+                        <div class="count_word">提问</div>
+                    </div>
+                    <div class="col-md-8 box split">
+                        <div class="count_num">33</div>
+                        <div class="count_word">回答</div>
+                    </div>
+                    <div class="col-md-8 box">
+                        <div class="count_num">78</div>
+                        <div class="count_word">笔记</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-18">
+                <div id="user_name">
+                    <div style="float: left;">
+                        <span class="name">五棵松</span>
+                        <span class="signature">, Yo</span>
+                    </div>
+                    <div class="joined_day">
+                        <span style="position: absolute;bottom: 0; right: 0;">Joined on 2014-7-7</span>
+                    </div>
+                </div>
+
+                <!-- 默认显示界面 -->
+                <div id="home_panel" class="content_panel">
+                    <div id="my_books">
+                        <ul>
+                            <li><img src="images/books/0.jpg"></li>
+                            <li><img src="images/books/1.jpg"></li>
+                            <li><img src="images/books/2.jpg"></li>
+                            <li><img src="images/books/3.jpg"></li>
+                            <li><img src="images/books/4.jpg"></li>
+                            <li><img src="images/books/5.jpg"></li>
+                        </ul>
+                        <div style="height: 2rem">
+                            <div id="detail">
+                                <i class="glyphicon glyphicon-hand-right" style="margin-right: 5px"></i>共标记16本
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="feeds">
+                        <div class="feed">
+                            <div>
+                                <span class="user_feed_label">添加了回答 @ </span>
+                                <span class="user_feed_book">《魔龙的狂舞》</span>
+                                <span style="float: right; color: #BBBBBB;font-size: 0.8rem">1天前</span>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <div class="feed_question_title"><a href="#">千面神是不是真正的神祗？</a></div>
+                                <div class="feed_brief">红神只是千面之神的一面，当时贾昆等三人是被艾莉亚从火上救回，因而贾大人才说欠以火为代表的红神三命嘛，关于红神不是有句话说“唯死亡方能换取生命”嘛，个人理解呢。。</div>
+                                <div class="feed_all">
+                                    红神只是千面之神的一面，当时贾昆等三人是被艾莉亚从火上救回，因而贾大人才说欠以火为代表的红神三命嘛，关于红神不是有句话说“唯死亡方能换取生命”嘛，个人理解呢。。
+                                    <div class="feed_all_roll_up" style="text-align: right">
+                                        <a href="javascript: void(0)">收起</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="feed">
+                            <div>
+                                <span class="user_feed_label">添加了笔记 @ </span>
+                                <span class="user_feed_book">《灿烂千阳》</span>
+                                <span style="float: right; color: #BBBBBB;font-size: 0.8rem">1天前</span>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <!--<div class="feed_question_title"><a href="#">千面神是不是真正的神祗？</a></div>-->
+                                <div class="feed_brief">私生女玛丽雅姆在父亲的宅院门口苦苦守候，回到家却看到因绝望而上吊自杀的母亲。那天是她十五岁的生日，而童年嘎然而止。玛丽雅姆随后由父亲安排远嫁喀布尔四十多岁的鞋匠拉希德，几经流产，终因无法生子而长期生活在家暴阴影之下。
+
+十八年后，少女莱拉的父母死于战火，青梅竹马的恋人也在战乱中失踪，举目无亲的莱拉别无选择，被迫嫁给拉希德。...
+                                </div>
+                                <div class="feed_all">
+                                    私生女玛丽雅姆在父亲的宅院门口苦苦守候，回到家却看到因绝望而上吊自杀的母亲。那天是她十五岁的生日，而童年嘎然而止。玛丽雅姆随后由父亲安排远嫁喀布尔四十多岁的鞋匠拉希德，几经流产，终因无法生子而长期生活在家暴阴影之下。
+
+十八年后，少女莱拉的父母死于战火，青梅竹马的恋人也在战乱中失踪，举目无亲的莱拉别无选择，被迫嫁给拉希德。两名阿富汗女性各自带着属于不同时代的悲惨回忆，共同经受着战乱、贫困与家庭暴力的重压，心底潜藏着的悲苦与忍耐相互交织，让她们曾经水火不容，又让她们缔结情谊，如母女般相濡以沫。然而，多年的骗局终有被揭穿的一天……
+
+她们将做出如何的选择？她们的命运又将何去何从？
+
+关于不可宽恕的时代，不可能的友谊以及不可毁灭的爱。《灿烂千阳》再次以阿富汗战乱为背景，时空跨越三十年，用细腻感人的笔触描绘了阿富汗旧家族制度下苦苦挣扎的妇女，她们所怀抱的希望、爱情...
+                                    <div class="feed_all_roll_up" style="text-align: right">
+                                        <a href="javascript: void(0)">收起</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我关注的人 -->
+                <div id="follow_panel" class="content_panel" style="display: none">
+                    <div class="back_nav">
+                        <div class="go_back">
+                            <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                            返回主页
+                        </div>
+                    </div>
+                    <div class="peoples">
+                        <!-- people 1 -->
+                        <div class="people">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="images/photo/1.jpg">
+                                </div>
+                                <div class="col-md-18">
+                                    <div class="people_name">
+                                        <span><a href="#">门卫</a></span>
+                                        <span>, 裁判主宰了比赛</span>
+                                    </div>
+                                    <div class="people_labels">
+                                        <i class="glyphicon glyphicon-tags" style="font-size: 0.8rem; color: #999999"></i>
+                                        <span>电子科技大学</span>
+                                        <span>实验班</span>
+                                        <span>作家协会</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="people_follow">
+                                        <div class="follow_action" style="float: right">
+                                            <i class="glyphicon glyphicon-plus" style="font-size: 70%; color: #00B5AD"></i>
+                                            加关注
+                                        </div>
+                                        <div class="cancel_follow" style="float: right;display: none">
+                                            <i class="glyphicon glyphicon-ok" style="font-size: 70%"></i>
+                                            取消关注
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- people 2 -->
+                        <div class="people">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="images/photo/2.jpg">
+                                </div>
+                                <div class="col-md-18">
+                                    <div class="people_name">
+                                        <span><a href="#">逍客路上</a></span>
+                                        <span>, 不带走一片云彩</span>
+                                    </div>
+                                    <div class="people_labels">
+                                        <i class="glyphicon glyphicon-tags" style="font-size: 0.8rem; color: #999999"></i>
+                                        <span>考试团</span>
+                                        <span>斧头帮</span>
+                                        <span>FFF</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="people_follow">
+                                        <div class="follow_action" style="float: right">
+                                            <i class="glyphicon glyphicon-plus" style="font-size: 70%; color: #00B5AD"></i>
+                                            加关注
+                                        </div>
+                                        <div class="cancel_follow" style="float: right;display: none">
+                                            <i class="glyphicon glyphicon-ok" style="font-size: 70%"></i>
+                                            取消关注
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 关注我的人 -->
+                <div id="followed_panel" class="content_panel" style="display: none">
+                    <div class="back_nav">
+                        <div class="go_back">
+                            <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                            返回主页
+                        </div>
+                    </div>
+                    <div class="peoples">
+                        <!-- people 3 -->
+                        <div class="people">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="images/photo/2.jpg">
+                                </div>
+                                <div class="col-md-18">
+                                    <div class="people_name">
+                                        <span><a href="#">逍客路上</a></span>
+                                        <span>, 不带走一片云彩</span>
+                                    </div>
+                                    <div class="people_labels">
+                                        <i class="glyphicon glyphicon-tags" style="font-size: 0.8rem; color: #999999"></i>
+                                        <span>考试团</span>
+                                        <span>斧头帮</span>
+                                        <span>FFF</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="people_follow">
+                                        <div class="follow_action" style="float: right">
+                                            <i class="glyphicon glyphicon-plus" style="font-size: 70%; color: #00B5AD"></i>
+                                            加关注
+                                        </div>
+                                        <div class="cancel_follow" style="float: right;display: none">
+                                            <i class="glyphicon glyphicon-ok" style="font-size: 70%"></i>
+                                            取消关注
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- people 4 -->
+                        <div class="people">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="images/photo/1.jpg">
+                                </div>
+                                <div class="col-md-18">
+                                    <div class="people_name">
+                                        <span><a href="#">门卫</a></span>
+                                        <span>, 裁判主宰了比赛</span>
+                                    </div>
+                                    <div class="people_labels">
+                                        <i class="glyphicon glyphicon-tags" style="font-size: 0.8rem; color: #999999"></i>
+                                        <span>电子科技大学</span>
+                                        <span>实验班</span>
+                                        <span>作家协会</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="people_follow">
+                                        <div class="follow_action" style="float: right">
+                                            <i class="glyphicon glyphicon-plus" style="font-size: 70%; color: #00B5AD"></i>
+                                            加关注
+                                        </div>
+                                        <div class="cancel_follow" style="float: right;display: none">
+                                            <i class="glyphicon glyphicon-ok" style="font-size: 70%"></i>
+                                            取消关注
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</body>
+</html>

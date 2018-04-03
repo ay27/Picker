@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inset android:insetLeft="0.0px" android:insetRight="0.0px" android:insetTop="0.0px" android:insetBottom="0.0px"
+       xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
+        <item>
+            <shape>
+                <gradient android:startColor="@color/book_page_indicator_start" android:endColor="@color/book_page_indicator_end" android:angle="270.0" />
+                <corners android:radius="0.0dip" />
+            </shape>
+        </item>
+    </selector>
+</inset>

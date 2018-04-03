@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              >
+    <include layout="@layout/toolbar" android:id="@+id/cropper_activity_toolbar" />
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarStyle="outsideOverlay"
+            android:background="@color/crop_background"
+        >
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <com.edmodo.cropper.CropImageView
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/CropImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                />
+
+        <ImageView
+                android:id="@+id/croppedImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                style="@style/image_style"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                />
+
+    </FrameLayout>
+
+</ScrollView>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:fab="http://schemas.android.com/apk/res-auto"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+        >
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/question_fragment_swipe"
+            >
+
+        <com.hb.views.PinnedSectionListView
+                android:id="@+id/question_fragment_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:headerDividersEnabled="false"
+                android:footerDividersEnabled="false"
+                android:divider="@null"
+                android:dividerHeight="4dp"
+                />
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <!--<org.bitman.ay27.PickerWidget.FloatingButton android:layout_width="wrap_content"-->
+                                                 <!--android:layout_height="wrap_content"-->
+                                                 <!--android:layout_gravity="bottom|right"-->
+                                                 <!--android:layout_margin="24dp"-->
+                                                 <!--android:id="@+id/question_fragment_float_button"-->
+                                                 <!--android:src="@drawable/ic_add_white_24dp"-->
+                                                 <!--fab:fab_colorNormal="#cc00BCD4"-->
+                                                 <!--fab:fab_colorPressed="#cc1E97A6"-->
+            <!--/>-->
+
+</FrameLayout>

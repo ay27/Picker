@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="favorite_text_color_gray_default">@android:color/darker_gray</color>
+    <color name="favorite_text_color_pressed">@android:color/white</color>
+    <color name="favorite_item_selected_background">#cc00a3ff</color>
+    <color name="favorite_item_default_background">@android:color/white</color>
+    <color name="favorite_checked">#cc00a3ff</color>
+    <color name="favorite_item_color_default">@android:color/darker_gray</color>
+
+
+    <color name="separator_press_color">#cc00a3ff</color>
+    <color name="separator_default_color">#eee</color>
+    <color name="separator_default_text_color">@android:color/darker_gray</color>
+    <color name="icon_default">@android:color/darker_gray</color>
+    <color name="book_page_indicator_start">#cc00a3ff</color>
+    <color name="book_page_indicator_end">#cc00a3ff</color>
+</resources>

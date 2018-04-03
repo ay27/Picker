@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:separatorbar="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        android:background="@color/default_background">
+    <include layout="@layout/toolbar" android:id="@+id/show_activity_toolbar" />
+
+    <org.bitman.ay27.PickerWidget.BookPageIndicator android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+            android:id="@+id/show_book_indicator"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            style="@style/title_style"
+            android:id="@+id/show_title"/>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                               android:layout_height="wrap_content"
+                                               separatorbar:text="描述"
+            />
+
+    <org.bitman.ay27.PickerWidget.markdown_support.MarkdownView android:layout_width="fill_parent"
+                               android:layout_height="wrap_content"
+                               android:id="@+id/show_markdown_view" />
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                               android:layout_height="wrap_content"
+                                               separatorbar:text="资料"
+                                               android:id="@+id/show_attachment_hint"
+            />
+    <org.bitman.ay27.PickerWidget.AdjustableListView android:layout_width="fill_parent"
+                                                     android:layout_height="wrap_content"
+            android:id="@+id/show_attachment_list"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SuperFavoriteButton">
+        <attr name="icon_size" format="dimension"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="enable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SeparatorBar">
+        <attr name="text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="BookPageIndicator">
+        <attr name="book_name" format="string"/>
+        <attr name="book_page" format="integer"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorPressed" format="color"/>
+        <attr name="fab_colorNormal" format="color"/>
+        <attr name="fab_shadow" format="boolean"/>
+        <attr name="fab_type" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

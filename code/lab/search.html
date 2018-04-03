@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/nprogress/nprogress.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/fake_bootstrap/fake_bootstrap.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/css/picker.css">
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/lib/nprogress/nprogress.js"></script>
+    <script src="/static/lib/jquery.pjax.js"></script>
+    <script src="/static/js/picker.js"></script>
+    <script src="/static/js/epiceditor/js/epiceditor.min.js"></script>
+    <script src="/static/js/ajaxfileupload.js"></script>
+</head>
+
+<!--TODO: AJAX取消息-->
+<body>
+    <div id="nav" class="row">
+        <div id="nav_content">
+            <div class="col-13">
+                <div id="logo" class="row">
+                    <div class="col-25">
+                        <img src="/static/images/elements/logo.png">
+                    </div>
+                    <div class="col-65">
+                        <span id="go_index"><a data-pjax href="/">Picker</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-22">
+                <div id="search_bar">
+                    <!--<i class="icon-search"></i>-->
+                    <form action="/search" method="get">
+                        <label for="search" style="display: none">搜索</label>
+                        <input type="text" id="search" name="s" placeholder="搜索书、笔记或人...">
+                    </form>
+                </div>
+            </div>
+            <div class="col-25">
+                <div class="row">
+                    <div class="col-33">
+                        <span class="nav_link"><a href="#">发现</a></span>
+                    </div>
+                    <div class="col-33">
+                        <span class="nav_link"><a data-pjax href="/group">圈子</a></span>
+                    </div>
+                    <div class="col-33">
+                        <span id="nav_msg" class="nav_link"><a data-pjax href="/message">消息</a></span>
+                        <span id="nav_msg_cnt">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-40">
+                <!--user bar-->
+                <div style="float: right">
+                    <a data-pjax href="/user/1234">
+                        <div id="nav_user">
+                            <div id="nav_photo"><img src="/static/images/photo/0.png"></div>
+                            <div id="nav_id">韩寒</div>
+                        </div>
+                    </a>
+                    <div id="nav_mail">
+                        <div id="nav_mail_icon">
+                            <a data-pjax href="/mail"><i class="icon-envelope-alt" style="margin-right: 5px"></i>私信</a>
+                        </div>
+                        <div id="nav_mail_cnt">0</div>
+                    </div>
+                    <div id="nav_logout">
+                        <a href="#"><i class="icon-signout" style="margin-right: 5px"></i>登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 55px;width: 100%; position: relative"></div>
+
+    <div id="main">
+        <!--**xx-->
+        <!--显示顺序 书，人，笔记-->
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-90">
+                <!--书籍-->
+                <div class="search_part">
+                    <div class="search_split">
+                        <a href="#"><i class="icon-book"></i>相关书籍</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-33">
+                            <div class="row">
+                                <div class="col-25">
+                                    <a href="#">
+                                        <img src="/static/images/books/1.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-65 cover_page">
+                                    <div class="name" style="margin-bottom: 10px"><a href="#">灿烂千阳</a></div>
+                                    <div class="info">作者：<span>[美] 卡勒德·胡赛尼 </span></div>
+                                    <div class="info">出版：<span>上海人民出版社</span></div>
+                                    <div class="info">年份：<span>2007-9</span></div>
+                                </div>
+                                <div class="col-5"></div>
+                            </div>
+                        </div>
+                        <div class="col-34">
+                            <div class="row">
+                                <div class="col-25">
+                                    <a href="#">
+                                        <img src="/static/images/books/1.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-65 cover_page">
+                                    <div class="name" style="margin-bottom: 10px"><a href="#">灿烂千阳</a></div>
+                                    <div class="info">作者：<span>[美] 卡勒德·胡赛尼 </span></div>
+                                    <div class="info">出版：<span>上海人民出版社</span></div>
+                                    <div class="info">年份：<span>2007-9</span></div>
+                                </div>
+                                <div class="col-5"></div>
+                            </div>
+                        </div>
+                        <div class="col-33">
+                            <div class="row">
+                                <div class="col-25">
+                                    <a href="#">
+                                        <img src="/static/images/books/1.jpg">
+                                    </a>
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-65 cover_page">
+                                    <div class="name" style="margin-bottom: 10px"><a href="#">灿烂千阳</a></div>
+                                    <div class="info">作者：<span>[美] 卡勒德·胡赛尼 </span></div>
+                                    <div class="info">出版：<span>上海人民出版社</span></div>
+                                    <div class="info">年份：<span>2007-9</span></div>
+                                </div>
+                                <div class="col-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--用户-->
+                <div class="search_part">
+                    <div class="search_split">
+                        <a href="#"><i class="icon-user"></i>成员</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-33">
+                            <div class="row">
+                                <div class="col-15">
+                                    <img src="static/images/photo/2.jpg" class="user">
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-75 user">
+                                    <div class="name"><a href="#">王师傅</a></div>
+                                    <div>
+                                        <span>
+                                            <a href="#" class="gray">关注 3.1k</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">提问 12</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">回答 32</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">笔记 64</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-34">
+                            <div class="row">
+                                <div class="col-15">
+                                    <img src="static/images/photo/2.jpg" class="user">
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-75 user">
+                                    <div class="name"><a href="#">王师傅</a></div>
+                                    <div>
+                                        <span>
+                                            <a href="#" class="gray">关注 3.1k</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">提问 12</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">回答 32</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">笔记 64</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-33">
+                            <div class="row">
+                                <div class="col-15">
+                                    <img src="static/images/photo/2.jpg" class="user">
+                                </div>
+                                <div class="col-5"></div>
+                                <div class="col-75 user">
+                                    <div class="name"><a href="#">王师傅</a></div>
+                                    <div>
+                                        <span>
+                                            <a href="#" class="gray">关注 3.1k</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">提问 12</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">回答 32</a>
+                                        </span>
+                                        <span>
+                                            <a href="#" class="gray">笔记 64</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--笔记/问答-->
+                <div class="search_part">
+                    <div class="search_split">
+                        <a href="#"><i class="icon-lightbulb"></i>问答 · 笔记</a>
+                    </div>
+
+                    <div class="feeds">
+                        <div class="browse_list_meta clear_fix">
+                            <div class="title">
+                                <a data-pjax href="/detail/777">历史上，有没有哪两个人真的算得上是一辈子的敌人？</a>
+                            </div>
+                            <!--<div class="feed_time">31分钟前</div>-->
+                        </div>
+                        <div class="browse_brief clear_fix">
+                            <div class="feed_text_wrap">
+                                <a data-pjax href="/detail/777">
+                                    <div class="feed_text">爆个冷门：京剧界的梅程。
+    梅兰芳是程砚秋正式磕过头的师父，程砚秋借助梅兰芳的提携，也在梅兰芳演出的天河配中出演过小宫女。但是这并不能说他们不会成为宿敌。程砚秋在罗瘿公辅助下，逐渐形成易于别派的程腔。
+    梅派有太真外传，程派就有梅妃。梅派有凤还巢，程派就有锁麟囊。
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="width: 2%; height: 1px; float: left"></div>
+                            <div class="feed_picture">
+                                <img src="/static/images/content/1.png">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feeds">
+                        <div class="browse_list_meta clear_fix">
+                            <div class="title note">
+                                <i class="icon-edit"></i>笔记
+                            </div>
+                        </div>
+                        <div class="browse_brief clear_fix">
+                            <div class="feed_text_wrap">
+                                <a href="/">
+                                    <div class="feed_text">
+                                        我前段时间不远万里去塞舌尔参加了叉烧的婚礼（如果你们还记得他），酒过三巡，不，准确的说是酒过好多好多巡，在我的循循善诱下，丫终于透露了心声，最爱的还是朔姑娘。我这次有了经验，没有搂住他，刻意保持了一米的距离，语重心长的套用了一段话：
+
+        那个人永远活在时间里了，你把她拉不出来，自己也回不去，就这样吧，让她安静的留在那里吧。...
+                                    </div>
+                                </a>
+                            </div>
+                            <div style="width: 2%; height: 1px; float: left"></div>
+                            <div class="feed_picture">
+                                <img src="/static/images/content/1.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-5"></div>
+        </div>
+
+        <!--xx**-->
+    </div>
+</body>
+</html>

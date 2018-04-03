@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="epiceditor"></div>
+<script src="../js/epiceditor/js/epiceditor.min.js"></script>
+<script>
+    var opts = {
+        container: 'epiceditor',
+        textarea: null,
+        basePath: 'epiceditor',
+        clientSideStorage: true,
+        localStorageName: 'epiceditor',
+        useNativeFullscreen: true,
+        parser: marked,
+        file: {
+            name: 'epiceditor',
+            defaultContent: '',
+            autoSave: 100
+        },
+        theme: {
+            base: '../js/epiceditor/themes/base/epiceditor.css',
+            preview: '../js/epiceditor/themes/preview/preview-dark.css',
+            editor: '../js/epiceditor/themes/editor/epic-dark.css'
+        },
+        button: {
+            preview: true,
+            fullscreen: true,
+            bar: "auto"
+        },
+        focusOnLoad: false,
+        shortcut: {
+            modifier: 18,
+            fullscreen: 70,
+            preview: 80
+        },
+        string: {
+            togglePreview: 'Toggle Preview Mode',
+            toggleEdit: 'Toggle Edit Mode',
+            toggleFullscreen: 'Enter Fullscreen'
+        },
+        autogrow: false
+    };
+var editor = new EpicEditor(opts);
+editor.onload();
+</script>
+</body>
+</html>

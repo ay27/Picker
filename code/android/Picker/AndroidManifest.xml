@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="org.bitman.ay27"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="16"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application android:label="@string/app_name" android:icon="@drawable/picker_icon"
+            android:theme="@style/AppTheme"
+            android:name=".PickerApplication">
+        <provider android:authorities="org.bitman.ay27.Picker" android:name=".data.PickerContentProvider"
+                android:exported="false"
+                />
+        <activity android:name=".view.sign_in_up.SignActivity"
+                  android:label="@string/app_name"
+                  android:icon="@drawable/picker_icon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.bitman.ay27.view.main.MainActivity" />
+        <activity android:name=".view.feed.FeedActivity" />
+        <activity android:name=".view.question_content.QuestionContentActivity" />
+        <activity android:name=".view.add_book.BookInfoActivity" />
+        <activity android:name=".view.writer.ShowActivity" />
+        <activity android:name=".view.add_book.ScanActivity"/>
+        <activity android:name=".view.circle.CircleActivity"/>
+        <activity android:name=".view.question_content.AnswerContentActivity"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".view.note_content.NoteContentActivity"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".view.private_letter.PrivateLetterActivity"
+                android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".view.user.UserAnswerListActivity" />
+        <activity android:name=".view.user.UserBookListActivity"/>
+        <activity android:name=".view.user.UserInfoActivity"/>
+        <activity android:name=".view.user.UserNoteListActivity"/>
+        <activity android:name=".view.user.UserQuestionListActivity"/>
+        <activity android:name=".view.user.UserCircleListActivity"/>
+        <activity android:name=".view.user.UserDynamicActivity"/>
+        <activity android:name=".view.user.BeFollowListActivity"/>
+        <activity android:name=".view.user.UserFollowOtherListActivity"/>
+        <activity android:name=".view.writer.crop.CropActivity"/>
+        <activity android:name=".view.writer.crop.CutImageActivity"/>
+
+        <activity android:name=".view.writer.WriteActivity"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".view.writer.page_detector.PageDetectorActivity"/>
+
+        <activity android:name=".view.attachment.AttachmentActivity"/>
+
+        <activity android:name=".view.feed.SearchActivity" />
+
+    </application>
+</manifest>

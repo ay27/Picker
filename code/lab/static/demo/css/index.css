@@ -1,0 +1,84 @@
+#content
+{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#label{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #FF9900;
+    margin-top: 20px;
+}
+
+#label hr{
+    border: 0;
+    height: 1px;
+    background-color: #EEEEEE;
+}
+
+/*#books_list .column{*/
+    /*margin-top: 0 !important;*/
+    /*margin-bottom: 0 !important;*/
+/*}*/
+
+.books_row{
+    margin-top: 30px;
+}
+.row:first-child{
+    margin-top: 0;
+}
+
+/*.shadow{*/
+    /*background: #FFFFFF;*/
+    /*border: 1px solid #EEEEEE;*/
+    /*-moz-box-shadow:    4px 4px 6px 0px rgba(0,0,0,0.50);*/
+    /*box-shadow:         4px 4px 6px 0px rgba(0,0,0,0.50);*/
+/*}*/
+
+.shadow{
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+}
+
+.blank{
+    border: 1px solid #FFFFFF;
+}
+
+.book{
+    padding: 20px;
+}
+
+.book img{
+    width: 150px;
+}
+
+.book .info{
+    margin-bottom: 15px;
+}
+.book .info:last-child{
+    margin-bottom: 0;
+}
+
+.book_title{
+    color: #4A90E2;
+    font-size: 1.3rem;
+}
+
+.book_author, .book_read{
+    font-size: 0.8rem;
+}
+
+.book_num{
+    font-size: 1.2rem;
+}
+
+.book_num .personal{
+    color: #FFBB00;
+    font-weight: bold;
+}
+
+.book_num .total{
+    color: #BBBBBB;
+    margin-left: 5px;
+}

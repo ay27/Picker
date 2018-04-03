@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:favoritebutton="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="@color/default_background">
+        <ImageView android:layout_width="100dp" android:layout_height="100dp"
+                   style="@style/image_style"
+                   android:id="@+id/user_info_user_image"
+                   android:src="@drawable/user_icon"
+                   android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+                />
+        <TextView
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:id="@+id/user_info_user_name" android:layout_alignTop="@+id/user_info_user_image"
+                android:layout_toRightOf="@+id/user_info_user_image"/>
+        <TextView
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"
+                style="@style/gray_small_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TA还没设置邮箱"
+                android:id="@+id/user_info_email" android:layout_below="@+id/user_info_user_name"
+                android:layout_toRightOf="@id/user_info_user_image"/>
+
+        <TableRow
+                android:padding="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="?android:attr/actionBarDivider"
+                android:showDividers="middle"
+                android:layout_below="@+id/user_info_email"
+                android:layout_alignLeft="@+id/user_info_email"
+                android:id="@+id/tableRow">
+            <LinearLayout
+                    android:paddingRight="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:background="@drawable/list_item_bg"
+                    android:clickable="true"
+                    android:id="@+id/user_info_follow_other">
+
+                <org.bitman.ay27.PickerWidget.NumberAdjustableTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123453"
+                        android:textSize="20sp"
+                        android:id="@+id/user_info_follow"
+                        android:textColor="@color/text_black_default_selector"/>
+                <TextView
+                        style="@style/gray_small_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="他关注的人"
+                        />
+            </LinearLayout>
+            <LinearLayout
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:background="@drawable/list_item_bg"
+                    android:clickable="true"
+                    android:id="@+id/user_info_be_follow">
+
+                <org.bitman.ay27.PickerWidget.NumberAdjustableTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textSize="20sp"
+                        android:id="@+id/user_info_be_follow_num"
+                        android:textColor="@color/text_black_default_selector"/>
+                <TextView
+                        style="@style/gray_small_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关注他的人"
+                        />
+            </LinearLayout>
+        </TableRow>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/default_background"
+            >
+
+        <org.bitman.ay27.view.widget.FavoriteButton android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    favoritebutton:icon_size="18dp"
+                                                    favoritebutton:text_size="16sp"
+                                                    android:layout_centerVertical="true"
+                                                    favoritebutton:enable="false"
+                                                    android:id="@+id/user_info_favorite"
+                />
+
+        <include layout="@layout/follow_button"/>
+    </RelativeLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:layout_marginTop="15dp"
+                  android:id="@+id/user_info_question"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="问题"
+                  style="@style/user_info_list_text_first"
+                />
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_question_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron0"/>
+    </LinearLayout>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:id="@+id/user_info_note"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="笔记"
+                  style="@style/user_info_list_text_first"/>
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_note_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron1"/>
+    </LinearLayout>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:id="@+id/user_info_answer"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="回答"
+                  style="@style/user_info_list_text_first"/>
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_answer_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron1"/>
+    </LinearLayout>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:id="@+id/user_info_dynamic"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="足迹"
+                  style="@style/user_info_list_text_first"/>
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_dynamic_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron1"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:layout_marginTop="15dp"
+                  android:id="@+id/user_info_book"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="看书"
+                  style="@style/user_info_list_text_first"/>
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_book_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron1"/>
+    </LinearLayout>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  style="@style/user_info_list_item"
+                  android:id="@+id/user_info_circle"
+            >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="圈子"
+                  style="@style/user_info_list_text_first"/>
+        <TextView android:layout_width="240dp" android:layout_height="wrap_content"
+                  android:text="10"
+                  style="@style/user_info_list_text_second"
+                  android:textColor="@color/text_black_default_selector"
+                  android:id="@+id/user_info_circle_num"
+                  android:gravity="right"
+                />
+        <include layout="@layout/chevon" android:id="@+id/chevron1"/>
+    </LinearLayout>
+
+</LinearLayout>

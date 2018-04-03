@@ -1,0 +1,33 @@
+{
+    "status": "success",
+    "end": "true",
+    "page": 151,
+    "posts": [
+        {
+            "id": 125,
+            "type": "question",
+            "author_photo_path": "/static/images/photo/3.jpg",
+            "picture": "/static/images/content/1.png",
+            "title": "设置标题",
+            "brief": "第四条了",
+            "date": "21天前"
+        },
+        {
+            "id": 126,
+            "type": "note",
+            "author_photo_path": "/static/images/photo/5.jpg",
+            "picture": "/static/images/content/1.png",
+            "brief": "我考试时间是什么？",
+            "date": "一个月前"
+        },
+        {
+            "id": 127,
+            "type": "question",
+            "author_photo_path": "/static/images/photo/6.jpg",
+            "picture": "/static/images/content/j1.jpg",
+            "title": "哪里有苹果体验店？",
+            "brief": "耶，我又是简介",
+            "date": "一个月前"
+        }
+    ]
+}

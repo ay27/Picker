@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Picker</string>
+    <string name="sign_in_page_title">登陆</string>
+    <string name="sign_up_page_title">注册</string>
+    <string name="sign_up_password_unequal">请输入相同的密码</string>
+    <string name="sign_in_failed">登陆失败</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="remove_book_succeed">删除成功</string>
+    <string name="remove_book_failed">删除失败</string>
+    <string name="remove_book_ask">需要删除此书？</string>
+    <string name="remove_book_confirm">确定</string>
+    <string name="remove_book_cancel">取消</string>
+    <string name="add_book_failed">添加失败</string>
+
+    <array name="drawer_list">
+        <item>首页</item>
+        <item>关注</item>
+        <item>设置</item>
+    </array>
+
+    <array name="question_note_add">
+        <item>新建问题</item>
+        <item>新建笔记</item>
+        <item>上传资料</item>
+    </array>
+
+    <!-- pull 2 refresh -->
+    <string name="pull_to_refresh_pull_down_label">滑动刷新</string>
+    <string name="pull_to_refresh_release_label">释放刷新</string>
+    <string name="pull_to_refresh_refreshing_label">加载中</string>
+    <string name="pull_to_refresh_tap_label">点击刷新</string>
+    <string name="action_failed">操作失败</string>
+    <string name="commit_succeed">提交成功</string>
+    <string name="add_book_result_load_failed">载入失败</string>
+    <string name="add_book_result_commit_failed">添加失败</string>
+    <string name="add_boot_result_commit_succeed">添加成功</string>
+    <string name="book_manager_activity_title">我的书本</string>
+    <string name="load_book_list_failed">书本信息载入失败</string>
+    <string name="load_user_info_failed">获取数据失败</string>
+    <string name="user_circle_load_failed">载入失败</string>
+    <string name="comment_activity_title">评论</string>
+    <string name="private_letter_load_failed">载入失败</string>
+    <string name="add_question_failed">提交失败</string>
+    <string name="add_qestion_ok">提交成功</string>
+    <string name="add_book_success">添加成功</string>
+    <string name="sign_in_success">登陆成功</string>
+    <string name="sign_up_failed">注册失败</string>
+    <string name="sign_up_success">注册成功</string>
+    <string name="cancel_favorite">取消赞</string>
+    <string name="favorite">赞</string>
+    <string name="follow">关注</string>
+    <string name="cancel_follow">取消关注</string>
+    <string name="sign_in_processing">正在登陆...</string>
+    <string name="sign_up_processing">注册中...</string>
+    <string name="delete_picture_request">确定删除此照片？</string>
+    <string name="no_delete">不删除</string>
+    <string name="delete">删除</string>
+    <string name="cut_image_success">裁剪成功</string>
+    <string name="if_need_cut_image">需要裁剪图片吗</string>
+    <string name="cut_image_ok">好的</string>
+    <string name="cut_image_cancel">不需要</string>
+    <string name="add_book_title">书本</string>
+    <string name="circle_activity_title">圈子</string>
+    <string name="book_activity_title">我的书本</string>
+    <string name="user_info_title">用户</string>
+    <string name="note_title">笔记</string>
+    <string name="private_letter_title">私信</string>
+    <string name="answer_content_title">回答</string>
+    <string name="question_content_title">问题</string>
+    <string name="my_answer_title">我的回答</string>
+    <string name="other_answer_title">TA的回答</string>
+    <string name="my_book_title">我看的书</string>
+    <string name="other_book_title">TA看的书</string>
+    <string name="my_circle_title">我的圈子</string>
+    <string name="other_circle_title">TA的圈子</string>
+    <string name="my_note_title">我的笔记</string>
+    <string name="other_note_title">TA的笔记</string>
+    <string name="my_question_title">我的问题</string>
+    <string name="other_question_title">TA的问题</string>
+    <string name="cut_image_title">裁剪</string>
+    <string name="writer_preview">预览</string>
+    <string name="writer_title">编辑</string>
+    <string name="write_link_input_title">插入链接</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="choose">选择</string>
+    <string name="commit_failed">上传失败</string>
+    <string name="add_link_failed">链接地址不能为空</string>
+    <string name="net_connect_failed">无法连接服务器，请检查网络连接！</string>
+    <string name="search_failed">搜索内容不能为空</string>
+    <string name="be_follow_title">关注TA的人</string>
+    <string name="follow_other_title">TA关注的人</string>
+
+    <string-array name="question_note_tab_title">
+        <item>问题</item>
+        <item>笔记</item>
+        <item>资料</item>
+    </string-array>
+
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+
+    <string name="join_button_acquire_quick">申请退出</string>
+    <string name="join_button_acquire_join">申请加入</string>
+    <string name="write_acquire_title">请输入标题</string>
+    <string name="write_acquire_content">请输入内容</string>
+    <string name="write_acquire_page">请输入页码</string>
+    <string name="my_dynamic_title">我的足迹</string>
+    <string name="other_dynamic_title">TA的足迹</string>
+    <string name="attachment_begin_download">开始下载</string>
+    <string name="answer_question_content_hint">回答的内容</string>
+    <string name="write_content_finish">完成</string>
+    <string name="attachment_download_error">下载失败</string>
+    <string name="attachment_download_success">下载完毕</string>
+    <string name="add_book_result_no_book">该书不存在</string>
+    <string name="choose_book_page_error">页码不能为负数</string>
+    <string name="answer_content_error_comment">出了点毛病</string>
+    <string name="note_content_error_comment">出了点毛病</string>
+    <string name="note">笔记</string>
+    <string name="book">书本</string>
+    <string name="question">问题</string>
+    <string name="circle">圈子</string>
+    <string name="user">用户</string>
+    <string name="afeed">资料</string>
+    <string name="please_choose">请选择</string>
+    <string name="attachment">资料</string>
+    <string name="search">搜索</string>
+    <string name="crop_activity_title">裁剪</string>
+    <string name="writer_question">新建问题</string>
+    <string name="writer_note">新建笔记</string>
+    <string name="writer_attachment">新建资料</string>
+    <string name="writer_answer">新建答案</string>
+    <string name="please_crop_before">请先裁剪</string>
+</resources>

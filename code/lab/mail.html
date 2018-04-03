@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/nprogress/nprogress.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/lib/fake_bootstrap/fake_bootstrap.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/css/picker.css">
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/lib/nprogress/nprogress.js"></script>
+    <script src="/static/lib/jquery.pjax.js"></script>
+    <script src="/static/js/picker.js"></script>
+    <script src="/static/js/epiceditor/js/epiceditor.min.js"></script>
+    <script src="/static/js/ajaxfileupload.js"></script>
+</head>
+
+<!--TODO: AJAX取消息-->
+<body>
+    <div id="nav" class="row">
+        <div id="nav_content">
+            <div class="col-13">
+                <div id="logo" class="row">
+                    <div class="col-25">
+                        <img src="/static/images/elements/logo.png">
+                    </div>
+                    <div class="col-65">
+                        <span id="go_index"><a data-pjax href="/">Picker</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-22">
+                <div id="search_bar">
+                    <!--<i class="icon-search"></i>-->
+                    <label for="search" style="display: none">搜索</label>
+                    <input type="text" id="search" name="search" placeholder="搜索书、笔记或人...">
+                </div>
+            </div>
+            <div class="col-25">
+                <div class="row">
+                    <div class="col-33">
+                        <span class="nav_link"><a href="#">发现</a></span>
+                    </div>
+                    <div class="col-33">
+                        <span class="nav_link"><a data-pjax href="/group">圈子</a></span>
+                    </div>
+                    <div class="col-33">
+                        <span id="nav_msg" class="nav_link"><a data-pjax href="/message">消息</a></span>
+                        <span id="nav_msg_cnt">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-40">
+                <!--user bar-->
+                <div style="float: right">
+                    <a data-pjax href="/user/1234">
+                        <div id="nav_user">
+                            <div id="nav_photo"><img src="/static/images/photo/0.png"></div>
+                            <div id="nav_id">韩寒</div>
+                        </div>
+                    </a>
+                    <div id="nav_mail">
+                        <div id="nav_mail_icon">
+                            <a data-pjax href="/mail"><i class="icon-envelope-alt" style="margin-right: 5px"></i>私信</a>
+                        </div>
+                        <div id="nav_mail_cnt">0</div>
+                    </div>
+                    <div id="nav_logout">
+                        <a href="#"><i class="icon-signout" style="margin-right: 5px"></i>登出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 55px;width: 100%; position: relative"></div>
+
+    <div id="main">
+        <!-- *** change here *** -->
+        <div id="receiver_id" data-value="112" style="display: none"></div>
+        <!-- 发送私信面板 -->
+        <div id="message_panel" class="shadow">
+            <div class="title clear_fix">
+                <div style="float: left">发送私信给<span id="receiver_name" style="margin-left: 5px">维维</span></div>
+                <div class="point_cursor" onclick="hide_panel($('#message_panel'), $('#cancel_message_panel'))" style="float: right"><i class="icon-remove"></i></div>
+            </div>
+
+            <div class="content">
+                <textarea id="message_content" placeholder="消息" rows="5"></textarea>
+                <input type="button" style="float: right; padding: 5px; margin-top: 10px" value="发送" onclick="send_message($('#receiver_id').data('value'))" />
+            </div>
+        </div>
+        <div id="cancel_message_panel" class="cancel_panel" onclick="hide_panel($('#message_panel'), $(this))"></div>
+        <!-- *** change end *** -->
+
+        <!--**xx-->
+        <div id="message_container">
+            <div class="back_nav clear_fix">
+                <!--<a data-pjax href="/">-->
+                    <div class="go_back" onclick="go_back()">
+                        <i class="icon-circle-arrow-left"></i>返回上一页
+                    </div>
+                <!--</a>-->
+            </div>
+
+            <div id="mail_list">
+                <div class="row mail">
+                    <div class="col-8">
+                        <div><img src="static/images/photo/8.jpg" style="width: 100%"></div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-90">
+                        <div class="mail_user">
+                            <a href="#">孙维维:</a>
+                            <button class="btn btn-success" data-mail-id="777" onclick="read_flag($(this))">已读</button>
+                            <!-- **change here** -->
+                            <div><a onclick="reply_message(112, '孙维维')">回复</a></div>
+                            <!-- change end -->
+                            <div onclick="toggle_my_reply($(this).parents('.mail'))"><a>回复记录</a></div>
+                        </div>
+                        <div class="mail_text">稍等哈呵呵呵</div>
+                        <div class="mail_time">3天前</div>
+                        <!-- **change here** -->
+                        <div class="mail_time" style="margin-right: 10px">共7条对话</div>
+                        <!-- change end -->
+                        <div style="clear: both"></div>
+                        <div class="my_replies">
+                            <div class="clear_fix">
+                                <div class="my_reply_text">
+                                    <span style="color: #999999">我：</span>你好呀
+                                </div>
+                                <div class="my_reply_time">
+                                    1天前
+                                </div>
+                            </div>
+                            <div class="clear_fix">
+                                <div class="my_reply_text">
+                                    <span style="color: #999999">我：</span>你好呀
+                                </div>
+                                <div class="my_reply_time">
+                                    1天前
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mail">
+                    <div class="col-8">
+                        <div><img src="static/images/photo/4.jpg" style="width: 100%"></div>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-90">
+                        <div class="mail_user">
+                            <a href="#">五棵松:</a>
+                            <button class="btn btn-success" data-mail-id="888" onclick="read_flag($(this))" style="display: none">已读</button>
+                            <div><a onclick="reply_message(113, '五棵松')">回复</a></div>
+                            <div onclick="toggle_my_reply($(this).parents('.mail'))"><a>回复记录</a></div>
+                        </div>
+                        <div class="mail_text">放学别走。</div>
+                        <div class="mail_time">3天前</div>
+                        <div style="clear: both"></div>
+                        <div class="my_replies">
+                            <div class="clear_fix">
+                                <div class="my_reply_text">
+                                    <span style="color: #999999">我：</span>你好呀
+                                </div>
+                                <div class="my_reply_time">
+                                    1天前
+                                </div>
+                            </div>
+                            <div class="clear_fix">
+                                <div class="my_reply_text">
+                                    <span style="color: #999999">我：</span>你好呀
+                                </div>
+                                <div class="my_reply_time">
+                                    1天前
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--xx**-->
+    </div>
+</body>
+</html>

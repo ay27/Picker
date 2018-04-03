@@ -1,0 +1,19 @@
+{
+    "groups": [
+        {
+            "link": "#",
+            "name": "电子科大",
+            "intro": "电子科大官方圈子",
+            "number_of_people": 12345,
+            "join_link": "#",
+            "create_date": "2012-12-12"
+        }, {
+            "link": "#",
+            "name": "一个",
+            "intro": "杂志社",
+            "number_of_people": 135,
+            "join_link": "#",
+            "create_date": "2013-1-17"
+        }
+    ]
+}

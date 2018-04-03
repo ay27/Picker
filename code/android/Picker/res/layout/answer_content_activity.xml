@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:favoritebutton="http://schemas.android.com/apk/res-auto"
+                xmlns:separatorbar="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+    <!--<include layout="@layout/toolbar" android:id="@+id/answer_content_activity_toolbar"/>-->
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:layout_alignParentBottom="true"
+                  android:orientation="horizontal"
+                  android:background="@color/gray_background"
+                  android:id="@+id/answer_content_activity_write_panel"
+                  android:padding="5dp"
+            >
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_weight="1.1"
+                  android:id="@+id/answer_content_activity_editText"
+                  android:layout_margin="4dp"
+                />
+        <Button android:layout_width="60dp" android:layout_height="35dp"
+                android:id="@+id/answer_content_activity_send_button"
+                android:background="@drawable/blue_button_round"
+                android:textColor="@color/white"
+                android:text="评论"
+                android:textSize="12sp"
+                android:layout_margin="4dp"
+                />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/default_background"
+            android:layout_above="@id/answer_content_activity_write_panel"
+            android:layout_alignParentTop="true">
+        <org.bitman.ay27.PickerWidget.BookPageIndicator android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:id="@+id/answer_content_activity_indicator"/>
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                android:focusableInTouchMode="true"
+                >
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:orientation="vertical">
+                <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:id="@+id/answer_content_activity_title"
+                          style="@style/title_style"
+                        />
+
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="1dp"/>
+
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:padding="4dp">
+                    <ImageView android:layout_width="30dp" android:layout_height="30dp"
+                               android:src="@drawable/user_icon"
+                               style="@style/image_style"
+                               android:layout_margin="4dp"
+                               android:id="@+id/answer_content_activity_avatar"
+                               android:layout_centerVertical="true"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_centerVertical="true"
+                              android:layout_toRightOf="@id/answer_content_activity_avatar"
+                              android:layout_margin="4dp"
+                              android:paddingLeft="8dp"
+                              android:id="@+id/answer_content_activity_user_name"/>
+                    <org.bitman.ay27.view.widget.FavoriteButton android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:id="@+id/answer_content_activity_favorite"
+                                                                android:layout_alignParentRight="true"
+                                                                favoritebutton:icon_size="18dp"
+                                                                favoritebutton:text_size="16sp"
+                                                                android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="wrap_content"
+                                                           separatorbar:text="回答内容"/>
+                <org.bitman.ay27.PickerWidget.markdown_support.MarkdownView android:layout_width="match_parent"
+                                                                            android:layout_height="match_parent"
+                                                                            android:id="@+id/answer_content_activity_content"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_gravity="right"
+                          android:textSize="12sp"
+                          android:textColor="@color/text_gray_default"
+                          android:layout_margin="8dp"
+                          android:id="@+id/answer_content_activity_time"/>
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="wrap_content"
+                                                           separatorbar:text="评论"
+                        />
+                <org.bitman.ay27.PickerWidget.AdjustableListView android:layout_width="match_parent"
+                                                                 android:layout_height="match_parent"
+                                                                 android:paddingBottom="10dp"
+                                                                 android:id="@+id/answer_content_activity_comment_list"/>
+                <include layout="@layout/nothing" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

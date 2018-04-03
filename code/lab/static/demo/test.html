@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function nano(template, data) {
+      var parse = function (key) {
+        var keys = key.split("."), v = data[keys.shift()];
+        for (var i = 0, l = keys.length; i < l; i++) {
+            if(keys[i].match(/\(\)/)){
+                v = v[keys[i].replace(/\(\)/, '')]();
+            }
+            else
+                v = v[keys[i]];
+        }
+        return v
+      };
+      return template.replace(/\{([\w\.\(\)]*)\}/g, function(str, key) {
+          console.log(key)
+        var v = parse(key);
+        return (typeof v !== "undefined" && v !== null) ? v : "";
+      });
+    }
+    c = '{c.haha} is {c.ee("ss")}';
+    console.log(nano(c, {c: {haha: 1, ee: function (s) {
+        console.log('here '+s)
+        return 's'
+    }}}))
+</script>
+</body>
+</html>

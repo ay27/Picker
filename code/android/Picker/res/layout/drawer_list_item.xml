@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="55dp"
+              android:layout_gravity="center_vertical"
+              android:gravity="center_vertical"
+              android:paddingLeft="16dp"
+              android:minHeight="55dp"
+              android:background="@drawable/list_item_bg"
+        >
+
+    <com.beardedhen.androidbootstrap.FontAwesomeText android:layout_width="55dp" android:layout_height="55dp"
+                                                     android:id="@+id/drawer_list_item_icon"
+                                                     android:textSize="24sp"
+                                                     android:layout_gravity="center"
+            />
+
+    <TextView
+            android:gravity="center_vertical"
+            android:id="@+id/drawer_list_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/drawer_item_text"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:layout_marginLeft="2dp"
+            android:textSize="18sp"
+            />
+
+</LinearLayout>

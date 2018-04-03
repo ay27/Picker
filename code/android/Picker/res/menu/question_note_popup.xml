@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="按时间排序" android:showAsAction="always"
+            android:id="@+id/menu_question_note_sort_time"/>
+    <item android:title="按章节排序" android:showAsAction="always"
+          android:id="@+id/menu_question_note_sort_section"/>
+</menu>

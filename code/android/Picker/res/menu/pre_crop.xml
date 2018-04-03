@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item android:title="旋转" android:id="@+id/pre_crop_rotate"-->
+          <!--app:showAsAction="always"-->
+            <!--android:icon="@drawable/ic_action_rotate_left"/>-->
+    <item android:title="裁剪" android:id="@+id/pre_crop_crop"
+            app:showAsAction="always"
+            android:icon="@drawable/ic_action_crop"/>
+
+    <item android:title="完成" android:id="@+id/post_crop_ok" app:showAsAction="always"
+          android:icon="@drawable/ic_action_accept"/>
+</menu>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="transRed">#55ff6666</color>
+
+    <color name="_base_holo_blue">#cc00a3ff</color>
+    <color name="_base_holo_blue_dark">#cc00a3ff</color>
+    <color name="_base_gray">@android:color/darker_gray</color>
+    <color name="_base_darker_gray">#777</color>
+    <color name="_base_white">@android:color/white</color>
+    <color name="_base_black">@android:color/black</color>
+    <color name="_base_background_1">#eee</color>
+    <color name="_base_background_2">#eeeeeeee</color>
+
+    <color name="answer_item_text_pressed">@color/_base_white</color>
+    <color name="answer_item_text_default">@color/_base_darker_gray</color>
+
+    <color name="book_item_text_default">#444</color>
+    <color name="book_item_text_pressed">@color/_base_white</color>
+
+    <color name="feed_list_item_text_pressed">@color/_base_white</color>
+    <color name="feed_list_item_text_default">@color/_base_darker_gray</color>
+    <color name="book_item_divider_start">@color/_base_white</color>
+    <color name="book_item_divider_end">@color/_base_background_1</color>
+    <color name="book_item_bg_default">@color/_base_white</color>
+    <color name="book_item_bg_pressed">@color/_base_holo_blue</color>
+
+    <color name="feed_title_bg_start">#fff</color>
+    <color name="feed_title_bg_end">@color/_base_background_1</color>
+    <color name="list_item_bg_default">@color/_base_white</color>
+    <color name="list_item_bg_pressed">@color/_base_holo_blue</color>
+    <color name="title_text_default">#444</color>
+    <color name="title_text_pressed">@color/_base_white</color>
+    <color name="text_gray_default">@color/_base_gray</color>
+    <color name="drawer_item_text_pressed">@color/_base_white</color>
+    <color name="drawer_item_text_default">@color/_base_black</color>
+    <color name="text_gray_default_default">@color/_base_gray</color>
+    <color name="text_gray_default_pressed">@color/_base_white</color>
+    <color name="drawer_user_name_color">@color/_base_black</color>
+    <color name="text_black_default_pressed">@color/_base_white</color>
+    <color name="text_black_default_default">@color/_base_black</color>
+    <color name="default_background">@color/_base_white</color>
+    <color name="button_text_white">@color/_base_white</color>
+    <color name="letter_item_bg_default">@color/_base_white</color>
+    <color name="letter_item_bg_pressed">@color/_base_holo_blue</color>
+    <color name="text_darker_gray_default_default">#666</color>
+    <color name="text_darker_gray_default_pressed">@color/_base_white</color>
+    <color name="gray_background">#ddd</color>
+    <color name="answer_title_bg">@color/_base_darker_gray</color>
+    <color name="radio_group_default">@color/_base_white</color>
+    <color name="radio_group_pressed">@color/_base_holo_blue</color>
+    <color name="crop_background">#ff444444</color>
+
+
+    <color name="write_button_bg_pressed">#44000000</color>
+    <color name="write_button_bg_default">#aa111111</color>
+
+    <color name="blue">#cc00a3ff</color>
+    <color name="windowBackground">#f9f9f9</color>
+
+
+    <!--<color name="primary">#2196F3</color>-->
+    <!--<color name="primary_dark">#1976D2</color>-->
+    <!--<color name="primary_light">#BBDEFB</color>-->
+    <!--<color name="primary_lightest">#B3E5FC</color>-->
+    <!--<color name="accent">#00BCD4</color>-->
+    <!--<color name="primary_text">#212121</color>-->
+    <!--<color name="secondary_text">#727272</color>-->
+    <!--<color name="icons">#FFFFFF</color>-->
+    <!--<color name="divider">#B6B6B6</color>-->
+
+
+    <color name="primary">#03A9F4</color>
+    <color name="primary_dark">#0288D1</color>
+    <color name="primary_lightest">#B3E5FC</color>
+    <color name="primary_light">#84D9FF</color>
+    <color name="accent">#00BCD4</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+</resources>

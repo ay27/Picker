@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <include layout="@layout/toolbar" android:id="@+id/add_book_result_toolbar" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:id="@+id/book_result_header"
+              android:textSize="30sp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="15dp"
+              android:paddingBottom="15dp"
+
+              android:text="重新发现社会"
+              android:textStyle="bold"
+              android:layout_below="@id/add_book_result_toolbar"
+            />
+
+    <!--<org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"-->
+                                               <!--android:layout_height="1dp"-->
+            <!--android:layout_below="@id/book_result_header"-->
+            <!--android:background="@color/black"/>-->
+
+    <ImageView android:layout_width="150dp" android:layout_height="210dp"
+               android:id="@+id/book_result_cover"
+               android:layout_below="@+id/book_result_header" android:layout_alignParentLeft="true"
+               android:src="@drawable/book_cover1"
+               android:adjustViewBounds="true"
+               android:scaleType="fitXY"
+               android:background="@drawable/bthumbnail_container_rounded"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:layout_marginTop="5dp"
+               android:layout_marginBottom="5dp"
+            />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_alignTop="@+id/book_result_cover"
+            android:layout_toRightOf="@+id/book_result_cover"
+            android:id="@+id/linearLayout"
+            android:padding="4dp">
+        <TextView
+                style="@style/gray_small_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ISBN："
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234567890123"
+                android:id="@+id/book_result_isbn"
+                />
+    </LinearLayout>
+    <LinearLayout
+            android:padding="4dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/linearLayout"
+            android:layout_toRightOf="@+id/book_result_cover" android:id="@+id/linearLayout2">
+        <TextView
+                style="@style/gray_small_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="作者："
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="熊培云"
+                android:id="@+id/book_result_writer"/>
+    </LinearLayout>
+    <LinearLayout
+            android:padding="4dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/linearLayout2"
+            android:layout_toRightOf="@+id/book_result_cover"
+            android:id="@+id/linearLayout3">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出版社："
+                style="@style/gray_small_text"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新星出版社"
+                android:id="@+id/book_result_press"/>
+    </LinearLayout>
+    <LinearLayout
+            android:padding="4dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/linearLayout3"
+            android:layout_toRightOf="@+id/book_result_cover" android:id="@+id/linearLayout4">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  style="@style/gray_small_text"
+                  android:text="读者："
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+                android:id="@+id/book_result_follow"/>
+
+    </LinearLayout>
+    <LinearLayout
+            android:padding="4dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/linearLayout4"
+            android:layout_toRightOf="@+id/book_result_cover" android:id="@+id/linearLayout5">
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  style="@style/gray_small_text"
+                  android:text="问题："
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+                android:id="@+id/book_result_question"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:padding="4dp"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/linearLayout5"
+            android:layout_toRightOf="@+id/book_result_cover"
+            >
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="笔记："
+                style="@style/gray_small_text"
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2345"
+                android:id="@+id/book_result_note"/>
+    </LinearLayout>
+
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="添加"
+            android:id="@+id/book_result_commit" android:layout_below="@+id/book_result_cover"
+            android:layout_centerHorizontal="true" android:layout_marginTop="60dp"
+            android:background="@drawable/bbuton_primary_rounded"
+            android:textColor="@color/white"
+            />
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="返回"
+            android:id="@+id/book_result_cancel" android:layout_below="@id/book_result_commit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bbuton_danger_rounded"
+            android:textColor="@color/white"/>
+
+
+</RelativeLayout>

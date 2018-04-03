@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_vertical"
+              android:layout_marginBottom="10dp"
+              android:background="@drawable/list_item_bg"
+        >
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                       android:id="@+id/comment_list_item_avatar"
+                       android:src="@drawable/user_icon"
+                       style="@style/image_style"
+                       android:layout_margin="5dp"
+                       android:layout_gravity="top"
+                       />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:textColor="@color/text_black_default_selector"
+                      android:textSize="16sp"
+                      android:padding="4dp"
+                      android:layout_gravity="center"
+                      android:id="@+id/comment_list_item_user_name"/>
+
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:id="@+id/comment_list_item_content"
+                  android:padding="8dp"
+                  android:textColor="@color/answer_item_text"
+                  android:lineSpacingMultiplier="1.2"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:padding="8dp"
+              android:textColor="@color/text_gray_default_selector"
+              android:gravity="right"
+              android:id="@+id/comment_list_item_time"
+            />
+
+</LinearLayout>

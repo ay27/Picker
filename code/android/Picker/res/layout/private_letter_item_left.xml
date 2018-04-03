@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        android:background="@drawable/list_item_bg"
+        android:padding="4dp"
+        android:gravity="left">
+    <LinearLayout android:layout_width="52dp" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+    <ImageView android:layout_width="40dp" android:layout_height="40dp"
+            android:id="@+id/private_letter_item_logo_left"
+            android:src="@drawable/user_icon"
+            style="@style/image_style"
+            android:layout_margin="4dp"
+            />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="12sp"
+                  android:padding="4dp"
+                  android:textColor="@color/text_darker_gray_default_selector"
+                  android:maxLines="1"
+                  android:ellipsize="end"
+                  android:id="@+id/private_letter_item_user_name_left"
+                />
+        </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_black_default_selector"
+            android:id="@+id/private_letter_item_message_content_left"
+            android:padding="5dp"
+            />
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/private_letter_item_time_left"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray_default_selector"/>
+    </LinearLayout>
+
+</LinearLayout>

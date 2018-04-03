@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/base.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/page.css">
+
+    <!--<script src="js/autoreload.js"></script>-->
+    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/page.js"></script>
+
+</head>
+<body>
+    <!-- sidebar -->
+    <div id="cancel_layer"></div>
+    <div id="sidebar">
+        <div id="menu">
+            <div id="book_info">
+                <div id="book_img"><img src="images/books/0.jpg" /></div>
+                <div id="book_auth">[美] 卡勒德·胡赛尼</div>
+            </div>
+        </div>
+        <button id="switch" data-effect="show">></button>
+    </div>
+
+    <header>   <!-- 固定部分 -->
+        <div id="top_bar">
+            <!-- 导航条部分，公共 -->
+            <div id="nav" class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <div id="logo" class="row">
+                        <div class="col-md-6">
+                            <img src="images/logo.png">
+                        </div>
+                        <div class="col-md-16">
+                            <a href="#"><h1>Picker</h1></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="margin-top: 6px !important;">
+                    <div class="ui mini icon input" style="width: 85%">
+                        <input type="text" placeholder="查询...">
+                        <i class="search icon" style="color: #5082AA"></i>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <a href="#"><h2>发现</h2></a>
+                        </div>
+                        <div class="col-md-8">
+                            <a href="#"><h2>前往</h2></a>
+                        </div>
+                        <div class="col-md-8">
+                            <a href="#"><h2>消息</h2></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <div>
+                            <a href="#"><img src="images/avatar_01.png" style="border-radius: 5px;"></a>
+                            <a href="#"><h3>韩寒</h3></a>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav_item" href="#" data-value="home">我的主页</a></li>
+                            <li><a class="nav_item" href="#" data-value="message">私信</a></li>
+                            <li><a class="nav_item" href="#" data-value="logout">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            <!-- 页码信息 -->
+            <div id="num_nav" class="row" style="padding-bottom: 0; margin-bottom: 0">
+                <div id="page_num" class="col-md-4"><b>Page 18</b></div>
+                <div class="col-md-2 show_type selected"><a href="#">全部</a>
+                </div>
+                <div class="col-md-2 show_type"><a href="#">问答</a>
+                </div>
+                <div class="col-md-2 show_type"><a href="#">笔记</a>
+                </div>
+                <div class="col-md-14">
+                </div>
+            </div>
+        </div>
+
+        <div class="fix_background">   <!-- 固定顶栏的背景 -->
+        </div>
+    </header>
+
+    <div id="browse_panel" class="content_panel" style="display: none">
+        <div class="content">
+            <div class="row portion">
+                <div class="col-md-2">  <!-- 头像 -->
+                    <div><img src="images/photo/1.jpg"></div>
+                    <div style="width: 100%; text-align: center; margin-top: 10px">
+                        <span class="label label-info">笔 记</span>
+                    </div>
+                </div>
+                <div class="col-md-22 info">
+                    <div class="user_id"> <!-- ID, 签名 -->
+                        Jeff Dean, 中文好难
+                    </div>
+                    <div class="main_info"> <!-- 内容 -->
+                        很多人都可以绘声绘色地讲述自己的故事，或是与自己有关的那些亲爱者的故事。习惯的说法是，每个人都能够写一本精彩的书，至于称之为回忆录还是小说，也许只是个人的偏好。但一个小说家之为小说家，是需要一本接一本不断写下去的，于是常见的情形是，很多写小说的人都在担心经验贫乏，且抱怨生活的平淡逼仄。在我看来，对于有这样担心和抱怨的写作者，最好的解决办法不是出国旅行、下乡采风或期盼一场大战乱的降临，而是放弃写小说这件事。“对作家来说，”毛姆讲，“在茶馆里瞥见某人或是在轮船的吸烟室里和某人聊上一刻钟往往就足够了。他所需要的全部就是那薄薄的然而肥沃的土层，使他可以在其上用自己的生活经历、对人性的认识和天真的本能进行建造。”
+                    </div>
+                    <div class="content_img"> <!-- 图片 -->
+                        <span><img src="images/content/1.png"></span>
+                        <span><img src="images/content/2.png"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row portion">
+                <div class="col-md-2">
+                    <div><img src="images/photo/2.jpg"></div>
+                    <div style="width: 100%; text-align: center; margin-top: 10px">
+                        <span class="label label-info">笔 记</span>
+                    </div>
+                </div>
+                <div class="col-md-22 info">
+                    <div class="user_id">
+                        Linus, I'm your God!
+                    </div>
+                    <div class="main_info">
+                        《神雕侠侣》是金庸作品集之一。其主人公杨过自然而然地走上了非正统的人生道路，入了“道流”。其特点是“至情至性，实现自我”，即把个人的利益、情感、个性及人格尊严置于人生首位，作为首要目标，亦作为待人处事，评价是非的首要原则。
+                    </div>
+                    <div class="content_img">
+                        <span><img src="images/content/j3.jpg"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row portion">
+                <div class="col-md-2">
+                    <div><img src="images/photo/3.jpg"></div>
+                    <div style="width: 100%; text-align: center; margin-top: 10px">
+                        <span class="label label-success">问 答</span>
+                    </div>
+                </div>
+                <div class="col-md-22 info">
+                    <div class="user_id">
+                        五棵松, Yo
+                    </div>
+                    <div class="question_title">
+                        <a href="#">千面神是不是真正的神祗？</a>
+                    </div>
+                    <div class="main_info">
+                        布拉弗斯，无面者的神
+                    </div>
+                    <div class="content_img">
+                        <span><img src="images/content/j4.jpg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="detail_panel" class="content_panel">
+        <div class="content">
+            <div class="row" style="margin: 0">
+                <div class="col-md-5">
+                    <div class="back_nav">
+                        <div class="go_back">
+                            <i class="glyphicon glyphicon-circle-arrow-left"></i>
+                            返回浏览页面
+                        </div>
+                    </div>
+
+                    <div id="neighbors">
+                        <div class="side_compose">
+                            <div>
+                                <span class="page_split">P 17</span>
+                            </div>
+                            <ul>
+                                <li class="side_question"><a href="#">我是谁？</a></li>
+                                <li class="side_question"><a href="#">我从哪里来？</a></li>
+                                <li class="side_question"><a href="#">我到哪里去？</a></li>
+                            </ul>
+                            <div class="side_note">
+                                22条笔记 »
+                            </div>
+                        </div>
+
+                        <div class="side_compose">
+                            <div>
+                                <span class="page_split">P 18</span>
+                            </div>
+                            <ul>
+                                <li class="side_question"><a href="#">千面神的起源？</a></li>
+                                <li class="focused_question"><i class="glyphicon glyphicon-hand-right"></i>千面神是真正的神祗吗？</li>
+                                <li class="side_question"><a href="#">贾坤显示的是真面目吗?</a></li>
+                            </ul>
+                            <div class="side_note">
+                                82条笔记 »
+                            </div>
+                        </div>
+
+                        <div class="side_compose">
+                            <div>
+                                <span class="page_split">P 22</span>
+                            </div>
+                            <ul>
+                                <li class="side_question"><a href="#">龙妈打算什么时候去维斯洛特？</a></li>
+                            </ul>
+                            <div class="side_note">
+                                17条笔记 »
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右侧内容 -->
+                <div class="col-md-19">
+                    <div style="margin-bottom: 20px">
+                        <div class="detail_title">千面神是不是真正的神祗？</div>
+                    </div>
+
+                    <div class="portion">
+                        <div class="row">
+                            <div class="col-md-23">
+                                <div class="user_id">
+                                    五棵松, Yo
+                                </div>
+                                <div class="detail_approve">
+                                    <span>31回答来自</span>
+                                    <span>韩寒、</span>
+                                    <span>王明明、</span>
+                                    <span>欧文</span>
+                                    <span class="detail_approve_more">等人</span>
+                                </div>
+                                <div class="detail_info">
+                                    <!-- Markdown html here -->
+                                    布拉弗斯，无面者的神。<br/>
+                                    神有千面，这个比光之王的一神论还要牛逼啊，不管你们怎么信别的神，所有神都是千面神的一面，归根结底还是信了我千面神。<br/>
+                                    哟西。<br/>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <img style="max-width: 100%" src="images/photo/3.jpg">
+                            </div>
+                        </div>
+                        <div style="clear: both"></div>
+
+                        <div style="margin-top: 10px">
+                            <!--tool bar-->
+                            <span class="notify">
+                                <i class="glyphicon glyphicon-plus" style="margin-right: 5px"></i>加关注
+                            </span>
+                            <span class="comment">
+                                <i class="glyphicon glyphicon-comment" style="margin-right: 5px"></i>8条评论
+                            </span>
+                            <span class="commit_day">
+                                5小时前
+                            </span>
+                        </div>
+                    </div>
+
+                    <!--编辑器-->
+                    <div class="portion">
+                        <div class="editor_label"><i class="glyphicon glyphicon-pencil" style="font-size: 0.8rem"></i> 添加答案</div>
+                        <div id="epiceditor" style="border: 1px solid #dddddd; border-radius: 5px;"></div>
+                        <div>
+                            <span style="float: right;">
+                                <button type="button" class="commit_button">提交回答</button>
+                            </span>
+                            <div style="clear: both"></div>
+                        </div>
+                    </div>
+
+                    <div class="portion ans_split">
+                        31回答
+                    </div>
+
+                    <div class="portion">
+                        <div class="col-md-23">
+                            <div class="user_id">
+                                韩寒, 小四快来关注我
+                            </div>
+                            <div class="detail_approve">
+                                <span>6赞同来自</span>
+                                <span>韩寒、</span>
+                                <span>王明明、</span>
+                                <span>欧文</span>
+                                <span class="detail_approve_more">等人</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <img style="max-width: 100%" src="images/avatar_01.png">
+                        </div>
+                        <div style="clear: both"></div>
+                        <div class="detail_info">
+                            <!-- Markdown html here -->
+                            布拉弗斯，无面者的神。<br/>
+                            神有千面，这个比光之王的一神论还要牛逼啊，不管你们怎么信别的神，所有神都是千面神的一面，归根结底还是信了我千面神。<br/>
+                            哟西。<br/>
+                        </div>
+                        <div style="margin-top: 10px">
+                            <!--tool bar-->
+                            <span class="up">
+                                <span class="up_icon"><i class="glyphicon glyphicon-thumbs-up"></i>赞</span>
+                                <span class="up_cnt">31</span>
+                            </span>
+                            <span class="comment">
+                                <i class="glyphicon glyphicon-comment" style="margin-right: 5px"></i>36条评论
+                            </span>
+                            <span class="commit_day">
+                                1小时前
+                            </span>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+
+                    <div class="ans_split"></div>
+
+                    <div class="portion">
+                        <div class="col-md-23">
+                            <div class="user_id">
+                                王明明, 美少女变身!
+                            </div>
+                            <div class="detail_approve">
+                                <span>3赞同来自</span>
+                                <span>欧文、</span>
+                                <span>王明明、</span>
+                                <span>韩寒、</span>
+                                <span>欧师傅、</span>
+                                <span class="detail_approve_more">等人</span>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <img style="max-width: 100%" src="images/photo/4.jpg">
+                        </div>
+                        <div style="clear: both"></div>
+                        <div class="detail_info">
+                            <!-- Markdown html here -->
+                            最近在豆瓣看到很多人想要下载生活大爆炸1-7季，昨晚我就把电脑上的上传到网盘，！有想保存到自己电脑的赶紧的去下载，由于不能放连接，容易被删，用下面的方式添加我，去扫一扫，我会把我的网盘账号和密码发给你，你们自己去下载。
+                        </div>
+                        <div style="margin-top: 10px">
+                            <!--tool bar-->
+                            <span class="up">
+                                <span class="up_icon"><i class="glyphicon glyphicon-thumbs-up"></i>赞</span>
+                                <span class="up_cnt">14</span>
+                            </span>
+                            <span class="comment">
+                                <i class="glyphicon glyphicon-comment" style="margin-right: 5px"></i>8条评论
+                            </span>
+                            <span class="commit_day">
+                                2小时前
+                            </span>
+                        </div>
+                        <div style="clear: both"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/epiceditor/js/epiceditor.min.js"></script>
+<script>
+var opts = {
+    container: 'epiceditor',
+    textarea: null,
+    basePath: 'js/epiceditor/',
+    clientSideStorage: true,
+    localStorageName: 'epiceditor',
+    useNativeFullscreen: true,
+    parser: marked,
+    file: {
+        name: 'epiceditor',
+        defaultContent: '',
+        autoSave: 100
+    },
+    theme: {
+        base: '/themes/base/epiceditor.css',
+        preview: '/themes/preview/github.css',
+        editor: '/themes/editor/epic-light.css'
+    },
+    button: {
+        preview: true,
+        fullscreen: true,
+        bar: "auto"
+    },
+    focusOnLoad: false,
+    shortcut: {
+        modifier: 18,
+        fullscreen: 70,
+        preview: 80
+    },
+    string: {
+        togglePreview: 'Toggle Preview Mode',
+        toggleEdit: 'Toggle Edit Mode',
+        toggleFullscreen: 'Enter Fullscreen'
+    },
+    autogrow: false
+};
+    var editor = new EpicEditor(opts);
+    editor.load();
+</script>
+</body>
+</html>

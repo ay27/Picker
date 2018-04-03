@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="裁剪" android:id="@+id/pre_cut_image_cut"
+          app:showAsAction="always"
+          android:icon="@drawable/ic_action_crop"/>
+    <item android:title="完成" app:showAsAction="always"
+          android:id="@+id/post_cut_image_ok"
+          android:icon="@drawable/ic_action_accept"/>
+</menu>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="15dp"
+        >
+
+    <com.andreabaccega.widget.FormEditText
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:hint="电子邮件"
+            android:id="@+id/sign_in_user_name"
+            android:paddingTop="15dp"
+            android:lines="1"
+            />
+    <com.andreabaccega.widget.FormEditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                           android:inputType="textPassword"
+                                           android:hint="密码"
+                                           android:id="@+id/sign_in_user_password"
+                                           android:paddingTop="15dp"
+                                           android:lines="1"
+            />
+    <Button android:layout_width="180dp" android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="确认"
+            android:textSize="20sp"
+            android:id="@+id/sign_in_confirm"
+            android:textColor="@color/button_text_white"
+            android:background="@drawable/green_button_round"/>
+
+    <!--<EditText android:layout_width="fill_parent" android:layout_height="wrap_content"-->
+            <!--android:padding="20dp"-->
+            <!--android:layout_margin="20dp"-->
+            <!--android:text="192.168.2.3:8080"-->
+            <!--android:id="@+id/sign_ip"/>-->
+</LinearLayout>
+

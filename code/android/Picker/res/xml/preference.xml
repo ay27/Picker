@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="账号" >
+        <Preference android:title="用户名"
+                    android:key="preference_user_name"
+                android:summary="点击退出当前账号"
+                />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="编辑器">
+        <ListPreference android:title="当前的编辑器"
+                android:entries="@array/EditorChoose"
+                android:entryValues="@array/EditorChoose"
+                android:key="preference_editor_list">
+        </ListPreference>
+    </PreferenceCategory>
+    <Preference android:title="关于"
+            android:key="preference_about"/>
+</PreferenceScreen>

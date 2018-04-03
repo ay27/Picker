@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="gray_small_text" >
+        <item name="android:textColor">@color/text_gray_default_selector</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="user_info_list_item">
+        <item name="android:clickable">true</item>
+        <item name="android:paddingRight">1dp</item>
+        <item name="android:paddingLeft">1dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/list_item_bg</item>
+    </style>
+
+    <style name="user_info_list_text_first">
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_black_default_selector</item>
+    </style>
+
+    <style name="user_info_list_text_second">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
+
+    <style name="image_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="drawer_item">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:background">@drawable/list_item_bg</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="drawer_item.big" parent="drawer_item">
+        <item name="android:layout_height">65dp</item>
+    </style>
+    <style name="drawer_item.small" parent="drawer_item">
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="title_style">
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/title_text</item>
+        <item name="android:background">@color/default_background</item>
+    </style>
+
+    <style name="write_button_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/write_button_bg</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/button_text_white</item>
+    </style>
+
+    <style name="write_content_button_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/write_button_bg</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/button_text_white</item>
+    </style>
+
+
+    <declare-styleable name="CutImageView">
+        <attr name="imageSrc" format="reference" />
+    </declare-styleable>
+
+</resources>

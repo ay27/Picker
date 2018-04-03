@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择书本，填入页码"
+            android:textSize="20sp"
+            android:id="@+id/_textView" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/choose_book_page_spinner" android:layout_below="@+id/_textView" android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/choose_book_page_spinner"
+            android:layout_marginTop="24dp"
+            android:gravity="center" android:id="@+id/linearLayout">
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/choose_book_page_pageNum"
+                android:hint="页码（默认为0）"
+                android:imeOptions="actionNext"/>
+        <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                bootstrapbutton:bb_icon_left="fa-camera"
+                bootstrapbutton:bb_size="small"
+                bootstrapbutton:bb_type="primary"
+                android:id="@+id/choose_book_page_capture_page"
+                />
+    </LinearLayout>
+    <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="下一步"
+            android:id="@+id/choose_book_page_next"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/bbuton_primary_rounded"
+            android:textColor="@color/white"
+            android:layout_below="@+id/linearLayout" android:layout_centerHorizontal="true"/>
+</RelativeLayout>

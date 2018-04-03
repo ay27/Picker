@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="EditorChoose">
+        <item>普通编辑器</item>
+        <item>Markdown编辑器</item>
+    </string-array>
+
+    <string-array name="UserInfoFragmentListItem">
+        <item>问题</item>
+        <item>回答</item>
+        <item>笔记</item>
+        <item>在读的书</item>
+        <item>圈子</item>
+    </string-array>
+    <string-array name="picture_source">
+        <item>图片</item>
+        <item>拍照</item>
+    </string-array>
+
+    <!-- relate to Message Module. -->
+    <string-array name="dynamic_message_action">
+        <item> </item>
+        <item>提出了问题</item>
+        <item>回答了问题</item>
+        <item>赞了该问题</item>
+        <item>赞了该回答</item>
+        <item>赞了该笔记</item>
+
+        <item>赞了您的评论</item>
+        <item>关注了该问题</item>
+        <item>添加了这本书</item>
+        <item>评论了该问题</item>
+        <item>评论了该笔记</item>
+
+        <item>评论了该回答</item>
+        <item>新建了圈子</item>
+        <item>加入了该圈子</item>
+        <item>添加了一条笔记</item>
+        <item>更新了该问题</item>
+
+        <item>该问题有新的回答</item>
+        <item>关注了用户</item>
+        <item>你的问题有新的回答</item>
+        <item>赞了你的问题</item>
+        <item>赞了你的回答</item>
+
+        <item>赞了你的评论</item>
+        <item>赞了你的笔记</item>
+        <item>你的回答有新的评论</item>
+        <item>你的问题有新的评论</item>
+        <item>你被该用户关注了</item>
+
+        <item>新建了问题</item>
+        <item>回答了问题</item>
+        <item>评论了问题</item>
+        <item>评论了笔记</item>
+        <item>评论了回答</item>
+
+        <item>新建了笔记</item>
+        <item>关注了用户</item>
+        <item>赞了该问题</item>
+        <item>赞了该笔记</item>
+        <item>赞了该回答</item>
+
+        <item>赞了该评论</item>
+        <item>新建了圈子</item>
+        <item>加入了圈子</item>
+    </string-array>
+
+    <string-array name="search_spinner">
+        <item>用户</item>
+        <item>圈子</item>
+        <item>书本</item>
+        <item>问题</item>
+        <item>笔记</item>
+    </string-array>
+    <string-array name="crop_image_dialog">
+        <item>裁剪</item>
+        <item>纠偏+裁剪</item>
+        <item>直接使用</item>
+    </string-array>
+    <string-array name="downloadMode">
+        <item>仅下载</item>
+        <item>下载后打开</item>
+    </string-array>
+
+</resources>

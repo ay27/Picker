@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:bootstrapbutton="http://schemas.android.com/apk/res-auto"
+                xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+    <include layout="@layout/toolbar" android:id="@+id/write_activity_toolbar" />
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="48dp"
+                  android:layout_below="@id/write_activity_toolbar"
+                  android:orientation="horizontal"
+                  android:id="@+id/write_actionbar"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+            <Spinner android:layout_width="200dp" android:layout_height="wrap_content"
+                     android:id="@+id/write_spinner"
+                    />
+            <EditText android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:hint="页码"
+                      android:inputType="number"
+                      android:layout_marginLeft="8dp"
+                      android:id="@+id/write_page"
+                    />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    bootstrapbutton:bb_icon_left="fa-camera"
+                    bootstrapbutton:bb_size="small"
+                    bootstrapbutton:bb_type="success"
+                    android:id="@+id/write_capture_page"
+                    />
+        <com.beardedhen.androidbootstrap.FontAwesomeText android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         fontawesometext:fa_icon="fa-check"
+                                                         android:id="@+id/write_ok"
+                />
+
+    </LinearLayout>
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:id="@+id/bottom_frame"
+                 android:background="#00000000">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bottom_layout"
+                android:background="#00000000"
+                >
+            <org.bitman.ay27.view.writer.editor_button.LinkButton
+                    android:text="链接"
+                    android:id="@+id/write_link_button"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.ImgButton
+                    android:text="图片"
+                    android:id="@+id/write_pic_button"
+                    style="@style/write_button_style"
+                    />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bottom_layout_md"
+                android:background="#00000000"
+                >
+            <org.bitman.ay27.view.writer.editor_button.RectBracketButton
+                    android:text="[]"
+                    android:id="@+id/write_button1"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.BracketButton
+                    android:text="()"
+                    android:id="@+id/write_button2"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.StarButton
+                    android:text="*"
+                    android:id="@+id/write_button3"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.SharpButton
+                    android:text="#"
+                    android:id="@+id/write_button4"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.ColonButton
+                    android:text="“ ”"
+                    android:id="@+id/write_button5"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.HttpButton
+                    android:text="http://"
+                    android:id="@+id/write_button6"
+                    style="@style/write_button_style"
+                    />
+            <org.bitman.ay27.view.writer.editor_button.TabButton
+                    android:text="Tab"
+                    android:id="@+id/write_button7"
+                    style="@style/write_button_style"
+                    />
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_above="@id/bottom_frame"
+                android:id="@+id/write_scrollView"
+                android:layout_below="@id/write_actionbar"
+                android:background="@color/default_background"
+            >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                >
+            <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="match_parent"
+                                                       android:layout_height="1dp"/>
+
+            <EditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      style="@style/title_style"
+                      android:id="@+id/write_header"
+                      android:hint="标题"/>
+
+            <EditText android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      style="@style/title_style"
+                      android:id="@+id/write_answer_question_title"
+                    android:text="答案的问题"/>
+
+            <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="match_parent"
+                                                       android:layout_height="1dp"/>
+
+            <EditText
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/write_content"
+                    android:isScrollContainer="true"
+                    android:linksClickable="true"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:hint="内容"
+                    android:gravity="left|top"
+                    android:minLines="10"
+                    android:background="@null"
+                    />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

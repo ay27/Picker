@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:favoritebutton="http://schemas.android.com/apk/res-auto"
+                xmlns:separatorbar="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+    <!--<include layout="@layout/toolbar" android:id="@+id/note_content_activity_toolbar" />-->
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:layout_alignParentBottom="true"
+                  android:orientation="horizontal"
+                  android:background="@color/gray_background"
+                  android:id="@+id/note_content_activity_write_panel"
+                  android:padding="5dp"
+            >
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_weight="1.1"
+                  android:id="@+id/note_content_activity_editText"
+                  android:layout_margin="4dp"
+                />
+        <Button android:layout_width="60dp" android:layout_height="35dp"
+                android:id="@+id/note_content_activity_send_button"
+                android:background="@drawable/blue_button_round"
+                android:textColor="@color/white"
+                android:text="评论"
+                android:textSize="12sp"
+                android:layout_margin="4dp"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_above="@id/note_content_activity_write_panel"
+            android:layout_alignParentTop="true">
+        <org.bitman.ay27.PickerWidget.BookPageIndicator android:layout_width="fill_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:id="@+id/note_content_activity_book_indicator"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+            <LinearLayout
+                    android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    >
+
+                <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                          android:id="@+id/note_content_activity_header"
+                          style="@style/title_style"
+                        />
+
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="wrap_content"
+                                                           separatorbar:text="内容"/>
+
+                <org.bitman.ay27.PickerWidget.markdown_support.MarkdownView android:layout_width="fill_parent"
+                                                                            android:layout_height="wrap_content"
+                                                                            android:id="@+id/note_content_activity_content"
+                                                                            android:paddingLeft="10dp"
+                                                                            android:paddingRight="10dp"
+                                                                            android:paddingTop="20dp"
+                                                                            android:paddingBottom="20dp"
+                        />
+
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="1dp"
+                        />
+
+                <RelativeLayout
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/default_background"
+                        >
+
+                    <org.bitman.ay27.view.widget.FavoriteButton android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_centerVertical="true"
+                                                                favoritebutton:icon_size="18dp"
+                                                                favoritebutton:text_size="16sp"
+                                                                android:id="@+id/note_content_activity_favorite"/>
+                    <include layout="@layout/follow_button"/>
+                </RelativeLayout>
+
+                <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                           android:layout_height="wrap_content"
+                                                           separatorbar:text="评论"/>
+
+                <org.bitman.ay27.PickerWidget.AdjustableListView android:layout_width="fill_parent"
+                                                                 android:layout_height="fill_parent"
+                                                                 android:paddingBottom="10dp"
+                                                                 android:id="@+id/note_content_activity_comment_list"
+                        />
+                <include layout="@layout/nothing"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

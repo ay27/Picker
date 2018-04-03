@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+        >
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:background="@color/gray_background"
+                  android:layout_alignParentBottom="true"
+                  android:id="@+id/private_letter_linearLayout"
+                  android:padding="5dp"
+                  android:layout_gravity="bottom">
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:hint="发送私信"
+                  android:layout_weight="1.1"
+                  android:id="@+id/private_letter_activity_editText"
+                  android:layout_margin="4dp"
+                />
+        <Button android:layout_width="60dp" android:layout_height="35dp"
+                android:id="@+id/private_letter_activity_send_button"
+                android:background="@drawable/blue_button_round"
+                android:textColor="@color/white"
+                android:text="发送"
+                android:textSize="12sp"
+                android:layout_margin="4dp"
+                />
+    </LinearLayout>
+    <ListView
+            android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:id="@+id/private_letter_activity_message_list"
+            android:transcriptMode="alwaysScroll"
+            android:background="@color/default_background"
+            android:focusableInTouchMode="true"
+            android:layout_above="@id/private_letter_linearLayout"
+            android:layout_alignParentTop="true"
+            />
+
+
+</RelativeLayout>

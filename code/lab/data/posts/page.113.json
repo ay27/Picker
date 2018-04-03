@@ -1,0 +1,24 @@
+{
+    "status": "success",
+    "end": "false",
+    "page": 113,
+    "posts": [
+        {
+            "id": 123,
+            "type": "note",
+            "author_photo_path": "/static/images/photo/1.jpg",
+            "picture": "",
+            "brief": "哈哈，这是简介。",
+            "date": "21小时前"
+        },
+        {
+            "id": 124,
+            "type": "question",
+            "author_photo_path": "/static/images/photo/2.jpg",
+            "picture": "/static/images/content/j1.jpg",
+            "title": "哪里有苹果体验店？",
+            "brief": "耶，我又是简介",
+            "date": "31分钟前"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="240dp"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:layout_gravity="start"
+              android:id="@+id/left_drawer"
+              android:background="@android:color/white">
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:paddingLeft="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_bg"
+            android:clickable="true"
+            android:id="@+id/drawer_user_area"
+            >
+        <ImageView android:layout_width="45dp" android:layout_height="45dp"
+                   android:src="@drawable/user_icon"
+                   style="@style/image_style"
+                android:id="@+id/userarea_imageView"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="棉棉"
+                  android:textStyle="bold"
+                  android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                  android:layout_marginLeft="12dp"
+                  android:textColor="@color/drawer_user_name_color"
+                  android:id="@+id/userarea_name"
+                />
+    </LinearLayout>
+
+    <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                         android:layout_height="1dp"/>
+
+    <ListView
+            android:id="@+id/drawer_activity_left_drawer"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:divider="?android:attr/actionBarDivider"
+            android:headerDividersEnabled="true"
+            android:footerDividersEnabled="false"
+            />
+
+</LinearLayout>

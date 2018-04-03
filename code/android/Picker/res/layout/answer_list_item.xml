@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp"
+              android:background="@drawable/list_item_bg"
+        >
+    <LinearLayout android:layout_width="40dp" android:layout_height="wrap_content" android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="top|left">
+        <ImageView android:layout_width="30dp" android:layout_height="30dp"
+                   android:id="@+id/answer_list_item_avatar"
+                android:src="@drawable/user_icon"
+                style="@style/image_style"
+                android:layout_margin="5dp"/>
+        <org.bitman.ay27.PickerWidget.NumberAdjustableTextView android:layout_width="30dp" android:layout_height="wrap_content"
+                  android:id="@+id/answer_list_item_favoriteNum"
+                  android:gravity="center"
+                android:background="@color/primary"
+                android:lines="1"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:textColor="@color/text_black_default_selector"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:id="@+id/answer_list_item_user_name"/>
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:id="@+id/answer_list_item_content"
+            android:padding="4dp"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:minHeight="65dp"
+            android:textColor="@color/answer_item_text"
+            android:lineSpacingMultiplier="1.2"
+            />
+    </LinearLayout>
+
+</LinearLayout>

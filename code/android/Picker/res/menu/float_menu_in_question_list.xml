@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="搜索" android:id="@+id/float_menu_in_question_list_search" />
+    <item android:title="新建" android:id="@+id/float_menu_in_question_list_add" />
+</menu>

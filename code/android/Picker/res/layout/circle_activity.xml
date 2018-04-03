@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               >
+    <include layout="@layout/toolbar" android:id="@+id/circle_activity_toolbar" />
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:separatorbar="http://schemas.android.com/apk/res-auto"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+            >
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:padding="8dp"
+                android:textColor="@color/title_text"
+                android:clickable="false"
+                android:id="@+id/circle_activity_title"
+                />
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_gravity="right"
+                      android:padding="5dp"
+                      android:layout_marginRight="3dp"
+                >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="创建人："
+                    android:textColor="@color/text_gray_default"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textColor="@color/text_gray_default"
+                    android:id="@+id/circle_activity_creater"/>
+        </LinearLayout>
+
+        <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                             android:layout_height="wrap_content"
+                separatorbar:text="宣言"/>
+
+        <org.bitman.ay27.PickerWidget.markdown_support.MarkdownView android:layout_width="fill_parent"
+                                       android:layout_height="wrap_content"
+                                       android:id="@+id/circle_activity_describe"/>
+        <org.bitman.ay27.view.widget.JoinButton android:layout_width="100dp" android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:layout_margin="8dp"
+                android:text="申请加入"
+                android:background="@drawable/bbuton_success"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:id="@+id/circle_activity_join"/>
+
+        <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                             android:layout_height="wrap_content"
+                                                             separatorbar:text="用户"/>
+        <org.bitman.ay27.PickerWidget.AdjustableListView android:layout_width="fill_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:padding="5dp"
+                                                               android:id="@+id/circle_activity_user_list"
+                />
+
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

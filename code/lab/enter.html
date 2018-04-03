@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="static/lib/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/static/css/picker.css">
+    <script src="/static/js/jquery.js"></script>
+</head>
+<body>
+    <div id="mc">
+        <div id="mt">Picker</div>
+        <div id="mn">
+            <span style="margin-right: 20px" data-tab="login" class="active">登陆</span>
+            <span data-tab="register" class="negative">注册</span>
+        </div>
+        <div id="msg" data-now="">
+
+        </div>
+        <div id="login_form">
+            <form action="/login" method="post" onsubmit="return login_check($(this))">
+                <div>
+                    <input name="email" placeholder="邮箱">
+                </div>
+                <div>
+                    <input name="password" type="password" placeholder="密码">
+                </div>
+                <div style="text-align: right">
+                    <button type="submit" class="btn btn-success">登陆</button>
+                </div>
+            </form>
+        </div>
+        <div id="register_form">
+            <form action="/register" method="post" onsubmit="return register_check($(this))">
+                <div>
+                    <input name="email" placeholder="邮箱" onblur="email_unique_check($(this).val(), $('#email_unique_check'))">
+                </div>
+                <div id="email_unique_check" data-value=false></div>
+                <div>
+                    <input name="name" placeholder="姓名" onblur="name_unique_check($(this).val(), $('#name_unique_check'))">
+                </div>
+                <div id="name_unique_check" data-value=false></div>
+                <div>
+                    <input name="password" type="password" placeholder="密码, 由6-20位数字和字符组成">
+                </div>
+                <div>
+                    <input name="password_confirm" type="password" placeholder="确认密码">
+                </div>
+                <div style="text-align: right">
+                    <button id="do_register" type="submit" class="btn btn-success">确认注册</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function email_unique_check(email, status_obj) {
+            if(!email)
+                return ;
+            unique_check({email: email}, status_obj, 'email')
+        }
+
+        function name_unique_check(name, status_obj) {
+            if(!name)
+                return ;
+            unique_check({name: name}, status_obj, 'name')
+        }
+        //检查邮箱地址或姓名是否被占用
+        function unique_check(data, status_obj, now) {
+            status_obj.data('value', 'waiting');
+            $.ajax({
+                url: '/register/check',
+                data: data,
+                success: function (req){
+                    var msg = req['status'];
+                    if(msg == '')
+                        msg = '连接错误';
+                    if(msg == 'success'){
+                        status_obj.data('value', true);
+                        if($('#msg').data('now') == now)
+                            $('#msg').hide();
+                    }else{
+                        status_obj.data('value', false);
+                        show_msg(msg, now);
+                    }
+                },
+                error: function () {
+                    status_obj.data('value', false);
+                    show_msg('error');
+                }
+            });
+        }
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function login_check(form) {
+            if(!validateEmail(form.find('input[name=email]').val())){
+                show_msg('邮箱格式不正确');
+                return false;
+            }
+            if(form.find('input[name=password]').val().length < 6 ||
+                    form.find('input[name=password]').val().length > 20){
+                show_msg('密码长度不正确');
+                return false;
+            }
+            return true;
+        }
+
+        function show_msg(msg, now) {
+            $('#msg').hide().html(msg).slideDown();
+            if(now){
+                $('#msg').data('now', now)
+            }
+        }
+
+        function register_check(form) {
+            var email = form.find('input[name=email]').val();
+            var name = form.find('input[name=name]').val();
+            var password = form.find('input[name=password]').val();
+            if(!validateEmail(email)){
+                show_msg('邮箱格式不正确');
+                return false;
+            }
+            if(!(name.length >= 2)){
+                show_msg('姓名应为2位以上的字符');
+                return false;
+            }
+            if(password.length < 6 || password.length > 20){
+                show_msg('密码应该有6-20位数字或者字符组成');
+                return false;
+            }
+            if(form.find('input[name=password]').val() !=
+                    form.find('input[name=password_confirm]').val()){
+                show_msg('两次输入密码不相同');
+                return false;
+            }
+            if($('#email_unique_check').data('value') == false){
+                show_msg('请重新输入邮箱地址');
+                return false;
+            }
+            if($('#name_unique_check').data('value') == false){
+                show_msg('请重新输入姓名');
+                return false;
+            }
+            if($('#email_unique_check').data('value') == 'waiting' ||
+                    $('#name_unique_check').data('value') == 'waiting'){
+                //正在查询
+                $('#do_register').html('提交中...');
+                var times = 10;
+                var check = function () {
+                    console.log('check');
+                    times -= 1;
+
+                    if(times == 0){
+                        show_msg('对不起, 连接错误。请刷新重来。');
+                        return ;
+                    }
+                    if($('#email_unique_check').data('value') == 'waiting' ||
+                            $('#name_unique_check').data('value') == 'waiting'){
+                        setTimeout(check, 500);
+                    }
+                };
+                setTimeout(check, 500);
+                return false;
+            }
+            return true;
+        }
+
+        $(document).ready(function () {
+            $('body').on('click', '.negative', function () {
+                $('#msg').hide();
+                var active = $('.active');
+                active.removeClass('active');
+                $(this).removeClass('negative');
+                active.addClass('negative');
+                $(this).addClass('active');
+
+                if($(this).data('tab') == 'login'){
+                    $('#register_form').hide();
+                    $('#login_form').fadeIn('slow');
+                }else{
+                    $('#login_form').hide();
+                    $('#register_form').fadeIn('slow');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        #msg{
+            margin: 5px auto;
+            background-color: #FCF8E3;
+            padding: 5px;
+            width: 270px;
+            color: #8A6D3B;
+            border-radius: 5px;
+            display: none;
+        }
+        .btn{
+            padding: 4px 8px;
+        }
+        form{
+            width: 270px;
+            margin: 0 auto;
+        }
+        input{
+            width: 250px;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+        }
+        #mc{
+            width: 500px;
+            text-align: center;
+            margin: 70px auto 0;
+        }
+        #mt{
+            font-size: 4rem;
+            font-weight: bold;
+            color: #5082AA;
+            border-bottom: 2px solid #f9f9f9;
+        }
+        #login_form, #register_form{
+            margin-top: 15px;
+        }
+        #register_form{
+            display: none;
+        }
+        #mn{
+            margin-top: 15px;
+            text-align: center;
+        }
+        #mn > span{
+            display: inline-block;
+            width: 70px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 5px;
+            color: #999999;
+        }
+        #mn > span:hover{
+            cursor: pointer;
+        }
+        #mn .active{
+            color: #5082AA;
+        }
+        #mn .negative:hover{
+            color: #5082AA;
+        }
+    </style>
+</body>
+</html>

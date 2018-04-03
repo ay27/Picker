@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:separatorbar="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/white"
+        >
+    <include layout="@layout/toolbar" android:id="@+id/attachment_activity_toolbar" />
+    <org.bitman.ay27.PickerWidget.BookPageIndicator android:layout_width="fill_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:id="@+id/attachment_activity_book_indicator"/>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+        <LinearLayout
+                android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical"
+                >
+
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:id="@+id/attachment_activity_header"
+                      style="@style/title_style"
+                    />
+
+            <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                       android:layout_height="wrap_content"
+                                                       separatorbar:text="描述"/>
+
+            <org.bitman.ay27.PickerWidget.markdown_support.MarkdownView android:layout_width="fill_parent"
+                                                                        android:layout_height="wrap_content"
+                                                                        android:id="@+id/attachment_activity_content"
+                                                                        android:paddingLeft="12dp"
+                                                                        android:paddingRight="12dp"
+                                                                        android:paddingTop="20dp"
+                                                                        android:paddingBottom="20dp"
+                    />
+
+            <org.bitman.ay27.PickerWidget.SeparatorBar android:layout_width="fill_parent"
+                                                       android:layout_height="wrap_content"
+                                                       separatorbar:text="文件（点击下载）"
+                    />
+
+            <org.bitman.ay27.PickerWidget.AdjustableListView android:layout_width="fill_parent"
+                                                             android:layout_height="wrap_content"
+                                                             android:id="@+id/attachment_activity_file_list"
+                    />
+            <include layout="@layout/nothing"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

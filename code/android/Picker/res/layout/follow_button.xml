@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.bitman.ay27.view.widget.FollowButton xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="100dp" android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bbuton_success"
+        android:text="关注"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_centerVertical="true"
+        android:id="@+id/follow_button"/>

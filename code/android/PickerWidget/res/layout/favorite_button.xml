@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fontawesometext="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:clickable="true"
+              android:background="@drawable/list_item_selector"
+              android:gravity="center_vertical"
+        android:padding="8dp">
+    <com.beardedhen.androidbootstrap.FontAwesomeText android:layout_width="wrap_content"
+                                                     android:layout_height="wrap_content"
+                                                     android:textSize="10sp"
+                                                     fontawesometext:fa_icon="fa-thumbs-up"
+                                                     android:textColor="@color/favorite_item_color_default"
+                                                     android:id="@+id/_favorite_icon"
+            />
+    <TextView
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:paddingLeft="4dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/favorite_button_text_selector"
+            android:id="@+id/_favorite_text"
+            />
+</LinearLayout>

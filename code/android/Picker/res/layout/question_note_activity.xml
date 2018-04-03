@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fab="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" android:id="@+id/question_note_activity_toolbar"/>
+
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="36dp"
+            >
+
+
+        <RadioGroup android:layout_width="fill_parent" android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:id="@+id/question_note_activity_radio_group"
+                >
+            <RadioButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+                         android:layout_weight="1"
+                         android:button="@null"
+                         android:text="问题"
+                         android:gravity="center"
+                         android:background="@drawable/radio_popup_button_bg"
+                         android:textColor="@drawable/radio_group_textcolor"
+                         android:id="@+id/question_note_activity_radio_1"/>
+            <RadioButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+                         android:layout_weight="1"
+                         android:button="@null"
+                         android:text="笔记"
+                         android:gravity="center"
+                         android:background="@drawable/radio_group_bg"
+                         android:textColor="@drawable/radio_group_textcolor"
+                         android:id="@+id/question_note_activity_radio_2"/>
+            <RadioButton android:layout_width="fill_parent" android:layout_height="fill_parent"
+                         android:layout_weight="1"
+                         android:button="@null"
+                         android:text="资料"
+                         android:gravity="center"
+                         android:background="@drawable/radio_group_bg"
+                         android:textColor="@drawable/radio_group_textcolor"
+                         android:id="@+id/question_note_activity_radio_3"/>
+        </RadioGroup>
+
+        <org.bitman.ay27.view.feed.FragmentIndicator android:layout_width="fill_parent" android:layout_height="3dp"
+                                                   android:id="@+id/question_note_activity_view_indicator"
+                                                   android:layout_gravity="bottom"/>
+    </FrameLayout>
+
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/question_note_activity_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        <org.bitman.ay27.PickerWidget.FloatingButton android:layout_width="wrap_content"
+                                                     android:layout_height="wrap_content"
+                                                     android:layout_gravity="bottom|right"
+                                                     android:layout_margin="24dp"
+                                                     android:id="@+id/question_note_fragment_float_button"
+                                                     android:src="@drawable/ic_add_white_24dp"
+                                                     fab:fab_colorNormal="#cc00BCD4"
+                                                     fab:fab_colorPressed="#cc1E97A6"
+                />
+    </FrameLayout>
+
+</LinearLayout>

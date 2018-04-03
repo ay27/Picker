@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="upload"
+            android:id="@+id/attachment_write_upload_button"/>
+
+    <ProgressBar
+            android:id="@+id/uploadProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:id="@+id/attachment_write_up_number"/>
+
+
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="download"
+            android:id="@+id/attachment_write_download_button"/>
+
+    <ProgressBar
+            android:id="@+id/downloadProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/attachment_write_down_number"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/attachment_write_button"/>
+
+</LinearLayout>

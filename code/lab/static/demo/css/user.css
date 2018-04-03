@@ -1,0 +1,309 @@
+#user_photo{
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#user_photo img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#user_name{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+    letter-spacing: 0.1rem;
+    height: 2.5rem;
+    position: relative;
+    width: 100%;
+}
+
+#user_name .name{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#user_name .signature{
+    font-size: 1rem;
+    color: #999999;
+}
+
+#user_name .joined_day{
+    color: #BBBBBB;
+    font-size: 0.8rem;
+    height: 100%;
+    float: right;
+    position: relative;
+    width: 150px;
+}
+
+#labels{
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#action{
+    border-bottom: 1px solid #eeeeee;
+}
+
+#action div{
+    text-align: center;
+}
+
+#action .col-md-12{
+    padding: 15px 0;
+    border-radius: 5px;
+}
+
+#action i{
+    margin-right: 10px;
+}
+
+#action .col-md-12:hover{
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.cancel_follow{
+    color: #999999;
+}
+
+#labels .label{
+    background-color: #5cb85c;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #FFFFFF;
+    font-weight: lighter;
+    font-size: 0.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 30px;
+}
+
+.follow{
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.info{
+    color: #999999;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.follow img{
+    max-width: 35px;
+    border-radius: 5px;
+    border-color: #FFFFFF;
+}
+
+.show_all{
+    float: right;
+    font-family: arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.show_all:hover{
+    color: #009EDA;
+    cursor: pointer;
+}
+
+#count{
+    margin-top: 15px;
+}
+
+.split{
+    border-right: 1px solid #eeeeee;
+}
+
+.count_num, .count_word{
+    text-align: center;
+}
+
+.count_num{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.count_word{
+    color: #999999;
+    font-size: 1rem;
+}
+
+.box:hover{
+    cursor: pointer;
+}
+
+#my_books ul{
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+#my_books li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px;
+    border: 2px solid #FFFFFF;
+}
+
+#my_books li:hover{
+    border: 2px dashed #5BBD72;
+    cursor: pointer;
+}
+
+#my_books img{
+    max-height: 135px;
+}
+
+#detail{
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #eeeeee;
+    color: #999999;
+}
+
+#detail:hover{
+    cursor: pointer;
+    color: #009EDA;
+}
+
+#feeds{
+    margin-top: 20px;
+}
+
+.feed{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.feed:first-child{
+    margin-top: 0;
+}
+
+.feed:hover{
+    background-color: #f5f5f5;
+}
+
+.user_feed_label, .user_feed_book {
+    font-size: 1rem;
+    color: #999999;
+}
+
+.user_feed_book:hover{
+    color: #5082AA;
+    cursor: pointer;
+}
+
+.feed_question_title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.feed_brief, .feed_all{
+    margin-top: 5px;
+    margin-left: 2px;
+    padding-left: 28px;
+    border-left: 2px solid #F5F5F5;
+}
+
+.feed_brief:hover{
+    cursor: pointer;
+}
+
+.feed_all{
+    display: none;
+}
+
+#follow_panel, #followed_panel{
+    margin-top: 15px;
+}
+
+.people img{
+    max-width: 75%;
+    border-radius: 5px;
+}
+
+.people{
+    padding: 10px;
+}
+
+.people .row{
+    margin: 0;
+    padding: 0;
+}
+
+.people .col-md-2, .people .col-md-18, .people .col-md-4{
+    padding: 0;
+}
+
+.people ~ .people{
+    margin-top: 10px;
+}
+
+.people:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+.people_name span{
+    letter-spacing: 1px;
+}
+
+.people_labels{
+    margin-top: 5px;
+}
+
+.people_labels span{
+    font-size: 1rem;
+    color: #999999;
+    margin-left: 5px;
+}
+
+.people_labels span:hover{
+    color: #009EDA;
+    cursor: pointer;
+}
+
+.people_labels span:first-child{
+    margin-left: 0;
+}
+
+.people_follow:hover{
+    cursor: pointer;
+}
+
+.back_nav{
+    clear: both;
+    height: 3rem;
+    margin: 0 10px 0;
+}
+
+.go_back{
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    color: #5BBD72;
+    float: right;
+}
+
+.go_back:hover{
+    cursor: pointer;
+}
+
+/*.go_back:hover{*/
+    /*-webkit-transition-duration: .2s;*/
+    /*transition-duration: .2s;*/
+    /*-webkit-transform: translate(-100px, 0);*/
+    /*-ms-transform: translate(-100px, 0);*/
+    /*transform: translate(-100px, 0);*/
+/*}*/
+
+.content_panel{
+    position: relative;
+}

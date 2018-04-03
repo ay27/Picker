@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="56dp"
+                android:minHeight="56dp"
+                android:background="@color/blue"
+                android:clickable="false"
+        >
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textStyle="bold|italic"
+              android:text="1.2"
+              android:lines="1"
+              android:id="@+id/chapter_item_header"
+              android:layout_centerVertical="true"
+              android:layout_alignParentStart="true"
+              android:paddingLeft="16dp"
+              android:paddingRight="8dp"
+              android:textColor="@color/white"
+              android:textSize="16sp"
+            />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="翻译并执行程序"
+              android:ellipsize="middle"
+              android:textStyle="bold|italic"
+              android:lines="1"
+              android:id="@+id/chapter_item_name"
+              android:layout_alignTop="@+id/chapter_item_header" android:layout_toEndOf="@+id/chapter_item_header"
+              android:paddingLeft="8dp"
+              android:paddingRight="8dp"
+              android:layout_centerVertical="true"
+              android:layout_alignBaseline="@id/chapter_item_header"
+              android:textColor="@color/white"
+              android:textSize="16sp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="19-23"
+              android:lines="1"
+              android:textStyle="bold|italic"
+              android:id="@+id/chapter_item_page"
+              android:paddingLeft="8dp"
+              android:paddingRight="16dp"
+              android:layout_alignTop="@+id/chapter_item_name" android:layout_alignParentEnd="true"
+              android:layout_centerVertical="true"
+              android:layout_alignBaseline="@id/chapter_item_header"
+              android:textColor="@color/white"
+              android:textSize="16sp"/>
+
+</RelativeLayout>
