@@ -1,8 +1,8 @@
-#Picker开发档案
+# Picker开发档案
 
 by  [ay27](https://github.com/ay27)
 
-##目录
+## 目录
 1. [整体框架](#1)
 2. [module类](#2)
 3. [数据库支持](#3)
@@ -38,7 +38,7 @@ by  [ay27](https://github.com/ay27)
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午4.10.18.png)
 
 
-###module的结构
+### module的结构
 由于服务器使用了Spring的MVC结构，为了与服务器保持简单的同步，android端也使用了类似的MVC结构。也就是说，module这个包里的内容应该是与服务器一样。同时，为了简化android端的设计，添加了几个接口，它们分别是：
 
 * IsFavorite，可以点赞（问题，笔记，回答等）
@@ -57,7 +57,7 @@ by  [ay27](https://github.com/ay27)
 
 另外，为了便于android端数据库的设计，所有的module都继承自`BaseModule类`，因为把一条信息插入数据库时，需要提供一个`id`，为了插入时消除重复，直接使用来自服务器的id，而不是自己生成。
 
-###各module类描述
+### 各module类描述
 1. Answer，也即回答，这里有两个变量值得关注：`questionId`和`replierId`，分别是这个回答对应的`问题id`和`回答者id`。用于获得回答者信息的类是`AnswerDP`
 2. AttachmentFile，附件贴中的文件，里边的`path`是这个文件的服务器路径，`aFeedId`是这个文件对应的附件贴id
 3. Book，其中的`hasInventory`属性是获知这本书是否存在章节，是后期才加上的，暂时没有使用，但其实在问题列表里是需要用到的
@@ -81,7 +81,7 @@ by  [ay27](https://github.com/ay27)
 * 使用数据库的原因
 * 数据库支持的详细描述
 
-###使用数据库的原因
+### 使用数据库的原因
 一开始想着用数据库来进行一些数据的缓存，后来发现，缓存的必要性不大，随后改造成适于列表ListView的展示，因为系统为我们提供了一个`CursorAdapter`，我们把数据从服务器中查询过来，然后插入数据库中，随后由系统自动通知CursorAdapter来进行页面更新。但是由于CursorAdapter的定制性实在差强人意，在某些界面还是使用了传统的BaseAdapter。之后会看到这些界面的。
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午4.59.30.png)
@@ -90,7 +90,7 @@ by  [ay27](https://github.com/ay27)
 
 其实到后来会发现，使用数据库来这样做实在是比较糟糕的实现方法，性能还不如直接用BaseAdapter。所以到后来确实有过把这些需要数据库支持的界面全部改成不需要数据库的支持，不过实在没有时间了，就让后来的人完成吧。
 
-###数据库支持的详细描述
+### 数据库支持的详细描述
 数据库在android上是以一个`ContentProvider`内容提供者的角色存在。也即，我们设计了一个ContentProvider供自己使用。
 
 下面是Picker中数据库的一些要点：
@@ -100,7 +100,7 @@ by  [ay27](https://github.com/ay27)
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午5.10.15.png)
 
 
-####PickerContentProvider的设计
+#### PickerContentProvider的设计
 每一个ContentProvider都需要实现`增删改查`几个基本功能。
 
 * `ContentProvider`用来提供数据给Application，然后在Application中使用`ContentResolver`来连接`ContentProvider`，实现了两者的解耦
@@ -113,7 +113,7 @@ by  [ay27](https://github.com/ay27)
 * 在数据库中保存json数据而不是每个module的具体信息的理由：使用Gson库可以非常完美的实现module和json之间的转换，那么就没有多少必要实现如此复杂的数据表。我们仅需在数据进出数据库的关口用Gson实现转换
 * `DataHelper类`用于向外暴露数据库接口，它需要使用`ContentResolver`来调用到`PickerContentProvider`的接口
 
-####CursorSupport的设计要点
+#### CursorSupport的设计要点
 * `CursorSupport`类的工作原理是：把一个CursorAdapter绑定到某个界面的LoadManager，然后给manager注册一个`Callback`，用来自动触发CursorAdapter的更新
 * 由于这个LoadManager可能来自`Activity`，也可能来自`Fragment`，所以代码里有`两个版本`的Constructor和Callback
 * CursorSupport使用`DataHelper`实现了数据库的插入，更新和清空，其他的数据库功能如果需要开放，可以在这里完成
@@ -127,10 +127,10 @@ by  [ay27](https://github.com/ay27)
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.06.47.png)
 
-###连接的方法
+### 连接的方法
 使用了volley库来简化开发。 与服务器的交互主要是两种方法：post和get方法。
 
-###各支持类的描述
+### 各支持类的描述
 * `PickerRequest类`是Picker于volley的代理接口，所有的request类都是继承自PickerRequest。在这个类里实现了：1.把任务添加到volley的工作队列；2.默认的ErrorCallback；3.volley的一些参数设置
 * `PostRequest类`，用于上传，有一个代理Callback，用于将json转换成各种Status。Status的具体定义在`Status类`中
 * `ModuleQueryRequest类`和`ListModuleQueryRequest类`，一个是实现了查询module，一个实现了查询一个list。这两者的差异是返回来的json解析方法不一样。具体可以参考源码
@@ -149,14 +149,14 @@ by  [ay27](https://github.com/ay27)
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午6.51.26.png)
 
-###简述
+### 简述
 （由于某些原因，上传和下载分布在三个地方。而且这个模块的实现非常糟糕，结构有点混乱，希望后来者对此有所改善）
 
 数据上传包括图片上传和文件上传，文件下载仅仅包括了文件下载，图片直接使用`ImageCacheManager类`来实现加载。
 
 图片上传在writer/upload/FeedTask中，使用了upload_download/MyUploadManager。
 
-###upload_download
+### upload_download
 （这个模块推荐使用service进行重构，方法见：<http://blog.csdn.net/liuhe688/article/details/6623924>）
 
 首先讲述upload_download里边的内容，这是这几个类的关系图：
@@ -173,7 +173,7 @@ by  [ay27](https://github.com/ay27)
 * 同时需要注意一个关键点：中转站还需要实时的获取到投递者的状态，是开启状态还是完成状态，或是错误状态。同时需要关注到访者的到访时刻。有可能出现这样的情况：到访者拿着投递者的id来询问投递者的相关状态，然后中转站告知投递者正在运行；然后到访者就开始访问投递者。由于是完全异步执行的，有可能在询问的过程中，投递者刚好完成了任务，但是还没有通知到中转站更新状态，然后到访者就傻傻地在那等着投递者的消息。 在目前的结构中这种可能是存在的，但是尚未测试出来。然后由于时间关系，这部分就这样先用着了。。。后来者可以在这里做一些改进
 * 注意我们的上传模块是使用了iso-8859-1编码，不是utf-8，具体原因是服务器，貌似是tomcat默认是iso-8859-1
 
-###view/writer/upload
+### view/writer/upload
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午5.53.14.png)
 
 先说明几个类完成的工作：
@@ -184,7 +184,7 @@ by  [ay27](https://github.com/ay27)
 
 下面针对几个类说明一下类内部各属性就清楚了。
 
-####AttachmentTask
+#### AttachmentTask
 
     private String title;	//附件贴的题目
     private String rawData;	//附件贴的md文本
@@ -197,9 +197,9 @@ by  [ay27](https://github.com/ay27)
     private Semaphore uploadAttachments, uploadContent;  //uploadAttachments是上传文件锁，唯有所有文件上传成功，服务器返回了对应的id后，这个锁才解开；uploadContent需要等到所有的文件上传完毕并获得了服务器返回的文件id后，才开始上传整个AttachmentFeedForm，唯有等到所有的数据上传完毕后，uploadContent锁解开，然后向外部投递上传完毕的消息    
     private ArrayList<Integer> attachmentIds;  //把文件上传到服务器后，服务器返回对应的id，这些id需要写入到AttachmentFeedForm，完成文件与附件贴的对应
 
-####FeedTask实现类似，不再赘述。
+#### FeedTask实现类似，不再赘述。
 
-####ImageUploadUtils
+#### ImageUploadUtils
 上传图片的过程与上传文件的过程类似，也是先把图片上传到服务器的临时目录，然后服务器返回图片对应的id，然后，此时会有所不同：
 
 * 本地拿到图片的id后，把md文本中图片的对应文本替换掉，以这样的格式替换：`![...](file://id)`
@@ -210,14 +210,14 @@ by  [ay27](https://github.com/ay27)
 * 整体描述
 * 各模块描述
 
-###模块整体描述
+### 模块整体描述
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午7.10.22.png)
 
 界面支持的代码量非常大，使用了很多额外的库来实现比较好的界面。在Picker的众多Module（这里的Module是相对于Project来说的）中，只有cropper不是用于实现界面的。
 下面简述各模块的细节。
 
-###各模块描述
-####AndroidBootstrap
+### 各模块描述
+#### AndroidBootstrap
 库的源地址：<https://github.com/Bearded-Hen/Android-Bootstrap/>
 
 这个模块是一些Boostrap风格的控件，以及Bookstrap风格的图标。
@@ -237,15 +237,15 @@ by  [ay27](https://github.com/ay27)
 
 可以看到，只需要改变fontawesometext:fa_icon属性就可以改变图标的样式，颜色等直接当成是普通的文字处理即可，非常方便。
 
-####appcompat
+#### appcompat
 直接拷贝自`android-sdk/extras/android/support/v7/appcompat`，是为了使用Material Design风格才用上的。如果使用gradle编译，这一个库是可以省去的，但是picker使用了ant编译，这里需要拷贝过来才能编译。实际在代码的唯一用处就是定义Material Design的style
 
-####EditTextValidator
+#### EditTextValidator
 用于提供以下界面，详细用法见源码：
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.41.37.png)
 
-####PickerWidget
+#### PickerWidget
 这里包含了一些简单的控件，以及某些我个人设计的控件。
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午7.39.43.png)
@@ -263,16 +263,16 @@ by  [ay27](https://github.com/ay27)
 9. SeparatorBar：一个分隔条，可以带上文字，具体看使用的地方
 10. SuperFavoriteButton：用于点赞的按钮控件，某些功能在Picker/view/widget中实现
 
-####pinned_section_listview
+#### pinned_section_listview
 用于实现在问题列表按章节排序后，列表的可固定效果
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午9.11.11.png)
 
-####supertoasts
+#### supertoasts
 有几种风格，慢慢体会：
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午9.13.50.png)
 
-####额外的模块
+#### 额外的模块
 一个是位于`Picker/swipe_back`，用于实现右滑返回。放在Picker里边是因为需要用到`PickerApplication`中的一些数据。**注意**：
 
 1. 这个模块的适配性感觉有点问题，在我的miui6和android5.0上能够完美实现功能，但是在某些系统中右滑时底下是黑色而不是前一个界面的图。希望后来者可以完美解决这个问题
@@ -297,10 +297,10 @@ getSwipeBackLayout().setEdgeSize(0);
 * 简述
 * 实现
 
-###简述
+### 简述
 使用`MaterialDesign`带来了最主要的功能是App顶部的`Toolbar`。Toolbar的特色，一个是`书本界面`左上角的`drawer动画`，另一个是在`FeedActivity`中天衣无缝的`TabSelector`和Toolbar的融合。当然还有其他自动替换的一些更美观的控件。
 
-###实现
+### 实现
 使用MaterialDesign其实不难。要使用MaterialDesign只需做以下工作：
 
 1. 添加`appcompat`，在前面已经说过
@@ -314,17 +314,17 @@ getSwipeBackLayout().setEdgeSize(0);
 
 <h2 id=8>登录和注册</h2>
 此部分比较简单，下面简述一下几个实现细节即可。
-###1. Cookie的设定（无论是SignIn还是SignUp，都需要设定，不设定的话服务器无法识别用户是否登录）
+### 1. Cookie的设定（无论是SignIn还是SignUp，都需要设定，不设定的话服务器无法识别用户是否登录）
 
 ```
 CookieManager cookieManager = new CookieManager();
 CookieHandler.setDefault(cookieManager);
 ```
 
-###2. 登录流程
+### 2. 登录流程
 分两步：登录 ---> 查询该用户信息（主要是获取用户的id）
 
-###3. SignActivity中使用了RadioGroup+ViewPager实现
+### 3. SignActivity中使用了RadioGroup+ViewPager实现
 这里需要注意`OnPageChangeListener`中的`onPageScrollStateChanged`回调函数。为了实现与直接使用系统Tab的效果，需要如Picker源码那样的做法。如果在`onPageSelected`触发时就改变RadioGroup的选中状态，会使得滑动手感很差，不信的话可以尝试一下就知道我说的意思了。
 
 
@@ -341,13 +341,13 @@ CookieHandler.setDefault(cookieManager);
 * 搜索 --- SearchFragment
 * 设置 --- Preferences
 
-####书本
+#### 书本
 在这个界面中，可以看到我关于数据库和列表界面（AbsListView）是如何关联的。注意这里没有使用`CursorSupport类`，是想着把我最原始的写法展现出来，`CursorSupport`是根据这个原始写法改进的。
 
-####关注和消息
+#### 关注和消息
 可以看到，在这两个界面中都是使用了同一个Fragment：MessageFragment。注意到这里直接继承了`ListSupportFragment`，相比BookFragment省去了不少的代码。`ListSupportFragment`会在稍后的[书本内容](#13)讲述。
 
-####私信
+#### 私信
 这里列出了所有的私信对象。继承自`SwipeListFragment`（可下拉刷新的ListView），同样在稍后的[书本内容](#13)讲述。
 
 这里直接把由DialogFragment引导去的`PrivateLetterActivity`讲述清楚。可以清楚的看到，在`PrivateLetterActivity`里边只做了一件事，把`PrivateLetterFragment`引用进来做界面。而`PrivateLetterFragment`才是我们真正的私信对话界面。
@@ -373,23 +373,23 @@ CookieHandler.setDefault(cookieManager);
 2. 使用CursorAdapter时也是根据条目是发自自己还是对方而使用不同的Item界面，但是CursorAdapter本身的机制问题，导致这个Item界面经常错乱
 3. 不使用CursorAdapter后，数据库就没必要使用了
 
-####下载
+#### 下载
 下载界面仅仅是把Picker/download_files/中的文件展示出来而已，后续可以做很多工作，比如文件管理的一些操作
 
-####搜索
+#### 搜索
 这里的搜索和后边[页码扫描和搜索](#14)不是一个东西。后边的主要是使用页码进行搜索，这里是直接文本模糊搜索。可以看到可搜索的内容有这些：
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.44.14.png)
 
 但是由于使用了MaterialDesign后，这个Spinner的下拉图标变白色了，导致一开始看不出来是一个下拉菜单，但是应该是可以改进的。
 
-####设置
+#### 设置
 这里的设置是使用了前面说到过的`preference_support`里的东西，具体看源码。
 
 <h2 id=10>添加书本</h2>
 添加书本，目前只做了扫描ISBN后直接得出结果的做法，当然也可以直接在前面说到过的搜索界面中搜索到书本信息后添加。这里主要讲述扫描界面，书本信息界面没多少好说的。
 
-###使用了ZXing库
+### 使用了ZXing库
 这个库已经包含在了`libs/ImageProc_Module`库中，这部分是由李佳阳完成并交给我的。由于这个库还包含了后边用到的页码识别（Tesseract库），所以使用`ConcreteImageTool`做了一个中间层。
 
 **必须注意到，所有的图像处理都需要谨慎仔细，一个是性能问题，一个是防止内存泄露！**
@@ -425,12 +425,12 @@ CookieHandler.setDefault(cookieManager);
 * QuestionList的两种排序方式
 * template模板方法
 
-###FeedActivity中的一些细节
+### FeedActivity中的一些细节
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-17 下午3.44.39.png)
 
 讲述两个要点：一个是顶部的Tab栏，一个是浮动按钮。
 
-####顶部Tab栏
+#### 顶部Tab栏
 由于使用了Toolbar，Toolbar不能使用原来的Tab in ActionBar的做法，而且原来的做法不支持更多的定制，所以就直接使用RadioGroup做了一个。关于RadioGroup和ViewPager的联合使用，在[登录和注册](#8)时已经说过，这里不再重复。
 
 但是仍然有一个要讲述的是问题Tab的点击后弹出选择窗的功能。
@@ -440,14 +440,14 @@ CookieHandler.setDefault(cookieManager);
 * 界面滑动时，Tab栏底下有一个白色条跟随，是`FragmentIndicator类`的工作
 * 更多的细节可以看这里：<http://www.ay27.pw/blog/2014/12/19/android-action-bar-tab/>
 
-####浮动按钮
+#### 浮动按钮
 浮动按钮可以做到Fragment中，也可以做到Activity。这里选择做到Activity是因为三个fragment都需要用到。
 
 * 使用`attachToListView`可以使得这个浮动按钮关联到某一个列表，使之随之滚动而弹出或收回
 * 在`onPageSelected`调用上面的`attachToListView`
 * 在`QuestionFragmentInTimeLine`这个Fragment的构建时传入浮动按钮，是因为一开始界面建立时不会触发onPageSelected，而且在Activity中不知道Fragment中的listView何时构建出来，所有只能把FloatingButton传入，让Fragment决定何时绑定
 
-###QuestionList的两种排序方式
+### QuestionList的两种排序方式
 由于韩老师一定要添上`按章节排序`的功能，而我本人一直想坚持使用`按时间排序`，两相争执下，就把两种排序方式放在了一起，但是只实现在QuestionList中，先试着使用后，再决定笔记和附件是否也需要这样的排序方式。
 
 （说明一点：按时间排序，其实是按问题的id排序，但是这个id是按时间线增长的，所以间接的变成了按时间排序。但是貌似由于CursorAdapter的排序问题，感觉顺序有点不靠谱，之后最好把CursorAdapter取缔）
@@ -471,14 +471,14 @@ CookieHandler.setDefault(cookieManager);
 * 把所有条目按页码排序，然后从头到尾扫描一遍，有相同章节的就放在同一个章节中，否则设置一个新的章节指示条
 * 递归扫描后拼接出章节指示条的文本：`concatSectionStr`
 
-###template模板方法
+### template模板方法
 主要讲述这个目录下的实现：
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/屏幕快照 2015-01-19 下午12.24.13.png)
 
 模板方法：简单地说，就是父类中定好一个实现的流程，并实现了多个实现中的共同部分，关键步骤由子类实现
 
-####1. ListSupportFragment
+#### 1. ListSupportFragment
 这个类比较关键，其他的模板基本上是由这个类演化过去的。下面的是比较完整的流程图
 
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/ListSupportTemplate.png)
@@ -501,13 +501,13 @@ private DataTable table;
 * listQueryUrl, listJsonKey：用于查询这个List的Url和用于解析获取到的json数据时，需要提供的一个JsonKey，也是由子类提供
 * DataTable：由于是使用的CursorAdapter，所以需要对应的一个数据表。可以看到，数据库的支持直接使用了`CursorSupport`
 
-####2. SwipeListFragment
+#### 2. SwipeListFragment
 直接继承自ListSupportFragment，但是增加了下拉刷新的功能，很简单，不再描述了
 
-####3. ListPartialLoadFragment
+#### 3. ListPartialLoadFragment
 与ListSupportFragment几乎一样，不一样的地方是，这里的列表是可以上拉到最后，自动加载更多。而ListSupportFragment中的List是直接加载全部。相应的添加了一个`loadMore`函数，用于实现上拉到底部后自动加载更多。直接看源码即可，没有多少技术
 
-####4. ListSupportActivity
+#### 4. ListSupportActivity
 ![image](https://github.com/ay27/Picker/blob/master/code/screen_shot/listSupportActivity.png)
 
 与ListSupportFragment类似，但是多了一个Module支持。是考虑到有些界面，会同时存在module和list，如QuestionContentActivity，这个界面既需要展示Question这个module，同时也需要展示对应的answer list。
@@ -520,7 +520,7 @@ private DataTable table;
 
 声明：页码扫描说实话个人感觉实用性一般，当然这里是一个引子，方便日后添加文字识别功能
 
-###页码识别模块
+### 页码识别模块
 识别模块使用的是`Tesseract`库，采用的是其中的英文字母识别训练文件。代码基本集中在`view/writer/page_detector/PageDetectorActivity`这个类中。与ISBN码识别的代码几乎是一样的，除了一条调用`ImageProc`进行识别的代码不一样。
 
 必须说明的是，几乎所有的模式识别算法都需要一个初始的训练文件，Tesseract也不例外。而且必须知道，这个训练文件一定要放在app能访问到的地方。
@@ -535,7 +535,7 @@ private DataTable table;
 6. 需要知道的是，识别的准确度其实不可能达到100%，所以设定了一个可选列表，把识别到的数字显示出来，让用户自行选择
 7. 我们选择的库是英文库，因为没有纯粹的数字库，所以我们选了一个较小的库，然后在识别时发现识别出字母后自动抛弃（开发时我们没有抛弃掉，然后发现识别到的几乎都是字母）
 
-###搜索过程
+### 搜索过程
 注意到`PageDetectorActivity`仅仅进行了数字识别，识别到的结果返回到原来的Activity，然后进行下一步的搜索。具体的可以查看view/feed/SearchActivity 以及 view/feed/SearchResultFragment
 
 
